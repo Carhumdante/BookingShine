@@ -2,4 +2,6 @@
     <string name="app_name">BookingShine</string>
 <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="complaints_and_suggestions">Complaints and suggestions</string>
+    <string name="subject">Subject</string>
 </resources>

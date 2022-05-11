@@ -20,10 +20,79 @@
         android:id="@+id/loginUserFragment"
         android:name="com.bookingshine.LoginUserFragment"
         android:label="fragment_login_user"
-        tools:layout="@layout/fragment_login_user" />
+        tools:layout="@layout/fragment_login_user" >
+        <action
+            android:id="@+id/action_loginUserFragment_to_nuevoEmpFragment"
+            app:destination="@id/nuevoEmpFragment" />
+        <action
+            android:id="@+id/action_loginUserFragment_to_resetPasswordEmpFragment"
+            app:destination="@id/resetPasswordEmpFragment" />
+        <action
+            android:id="@+id/action_loginUserFragment_to_perfilEmpFragment"
+            app:destination="@id/perfilEmpFragment" />
+        <action
+            android:id="@+id/action_loginUserFragment_to_resetPasswordEmpFragment2"
+            app:destination="@id/resetPasswordEmpFragment" />
+    </fragment>
     <fragment
         android:id="@+id/loginEmpFragment"
         android:name="com.bookingshine.LoginEmpFragment"
         android:label="fragment_login_emp"
-        tools:layout="@layout/fragment_login_emp" />
+        tools:layout="@layout/fragment_login_emp" >
+        <action
+            android:id="@+id/action_loginEmpFragment_to_nuevoUserFragment"
+            app:destination="@id/nuevoUserFragment" />
+        <action
+            android:id="@+id/action_loginEmpFragment_to_resetPasswordUserFragment"
+            app:destination="@id/resetPasswordUserFragment" />
+        <action
+            android:id="@+id/action_loginEmpFragment_to_perfilUserFragment"
+            app:destination="@id/perfilUserFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/nuevoUserFragment"
+        android:name="com.bookingshine.NuevoUserFragment"
+        android:label="fragment_nuevo_user"
+        tools:layout="@layout/fragment_nuevo_user" >
+        <action
+            android:id="@+id/action_nuevoUserFragment_to_perfilUserFragment"
+            app:destination="@id/perfilUserFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/resetPasswordUserFragment"
+        android:name="com.bookingshine.ResetPasswordUserFragment"
+        android:label="fragment_reset_password_user"
+        tools:layout="@layout/fragment_reset_password_user" >
+        <action
+            android:id="@+id/action_resetPasswordUserFragment_to_loginEmpFragment"
+            app:destination="@id/loginEmpFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/perfilUserFragment"
+        android:name="com.bookingshine.PerfilUserFragment"
+        android:label="fragment_perfil_user"
+        tools:layout="@layout/fragment_perfil_user" />
+    <fragment
+        android:id="@+id/nuevoEmpFragment"
+        android:name="com.bookingshine.NuevoEmpFragment"
+        android:label="fragment_nuevo_emp"
+        tools:layout="@layout/fragment_nuevo_emp" >
+        <action
+            android:id="@+id/action_nuevoEmpFragment_to_perfilEmpFragment"
+            app:destination="@id/perfilEmpFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/resetPasswordEmpFragment"
+        android:name="com.bookingshine.ResetPasswordEmpFragment"
+        android:label="fragment_reset_password_emp"
+        tools:layout="@layout/fragment_reset_password_emp" >
+        <action
+            android:id="@+id/action_resetPasswordEmpFragment_to_loginUserFragment"
+            app:destination="@id/loginUserFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/perfilEmpFragment"
+        android:name="com.bookingshine.PerfilEmpFragment"
+        android:label="fragment_perfil_emp"
+        tools:layout="@layout/fragment_perfil_emp" />
 </navigation>

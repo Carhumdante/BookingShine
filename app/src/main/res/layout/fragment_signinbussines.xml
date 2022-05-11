@@ -77,7 +77,7 @@
                 android:id="@+id/pass"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_toRightOf="@+id/icon"
+                android:layout_toRightOf="@+id/icon3"
                 android:background="@android:color/transparent"
                 android:fontFamily="@font/poppins_regular"
                 android:hint="Password"
@@ -92,7 +92,7 @@
 
             <!-- ICON -->
             <ImageView
-                android:id="@+id/icon"
+                android:id="@+id/icon3"
                 android:layout_width="14.7dp"
                 android:layout_height="10.3dp"
                 android:layout_centerVertical="true"

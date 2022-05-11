@@ -7,14 +7,17 @@
         <entry key="..\:/Apps/BookingShine/app/src/main/res/layout/fragment_complaintsandsugestions.xml" value="0.17074275362318841" />
         <entry key="..\:/Apps/BookingShine/app/src/main/res/layout/fragment_login.xml" value="0.17074275362318841" />
         <entry key="..\:/Users/alanr/AndroidStudioProjects/BookingShine/app/src/main/res/drawable/blue_fill__rounded_color.xml" value="0.2555" />
+        <entry key="..\:/Users/alanr/AndroidStudioProjects/BookingShine/app/src/main/res/drawable/border.xml" value="0.2555" />
         <entry key="..\:/Users/alanr/AndroidStudioProjects/BookingShine/app/src/main/res/drawable/cursor_color.xml" value="0.2555" />
         <entry key="..\:/Users/alanr/AndroidStudioProjects/BookingShine/app/src/main/res/layout/activity_main.xml" value="0.22509057971014493" />
         <entry key="..\:/Users/alanr/AndroidStudioProjects/BookingShine/app/src/main/res/layout/fragment_complaintsandsugestions.xml" value="0.25" />
+        <entry key="..\:/Users/alanr/AndroidStudioProjects/BookingShine/app/src/main/res/layout/fragment_home__user.xml" value="0.2" />
         <entry key="..\:/Users/alanr/AndroidStudioProjects/BookingShine/app/src/main/res/layout/fragment_profile__bussines.xml" value="0.264" />
         <entry key="..\:/Users/alanr/AndroidStudioProjects/BookingShine/app/src/main/res/layout/fragment_reschedule_business.xml" value="0.22509057971014493" />
-        <entry key="..\:/Users/alanr/AndroidStudioProjects/BookingShine/app/src/main/res/layout/fragment_ressetpassword_bussines.xml" value="0.4" />
+        <entry key="..\:/Users/alanr/AndroidStudioProjects/BookingShine/app/src/main/res/layout/fragment_ressetpassword_bussines.xml" value="0.264" />
         <entry key="..\:/Users/alanr/AndroidStudioProjects/BookingShine/app/src/main/res/layout/fragment_signin_bussines.xml" value="0.25" />
         <entry key="..\:/Users/alanr/AndroidStudioProjects/BookingShine/app/src/main/res/layout/fragment_signinbussines.xml" value="0.25" />
+        <entry key="..\:/Users/alanr/AndroidStudioProjects/BookingShine/app/src/main/res/xml/border.xml" value="0.25" />
       </map>
     </option>
   </component>

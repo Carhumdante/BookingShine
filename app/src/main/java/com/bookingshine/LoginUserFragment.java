@@ -61,14 +61,14 @@ public class LoginUserFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_login_user, container, false);
-        Button loginUser = view.findViewById(R.id.BLoginUser);
+        Button loginUser = view.findViewById(R.id.loginuser1);
         loginUser.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Navigation.findNavController(view).navigate(R.id.action_loginUserFragment_to_home_User);
             }
         });
-        Button regisUser = view.findViewById(R.id.BRegistUser);
+        Button regisUser = view.findViewById(R.id.reguser1);
         regisUser.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

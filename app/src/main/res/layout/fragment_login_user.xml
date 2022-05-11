@@ -69,7 +69,7 @@
             android:backgroundTint="@color/design_default_color_primary"/>
 
         <Button
-            android:id="@+id/BLoginUser"
+            android:id="@+id/loginuser1"
             android:layout_width="211dp"
             android:layout_height="56dp"
             android:layout_marginStart="187dp"
@@ -83,7 +83,7 @@
             android:background="@drawable/button_rounded"/>
 
         <Button
-            android:id="@+id/BRegistUser"
+            android:id="@+id/reguser1"
             android:layout_width="211dp"
             android:layout_height="56dp"
             android:layout_marginStart="187dp"
@@ -93,7 +93,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.418"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/BLoginUser"
+            app:layout_constraintTop_toBottomOf="@+id/loginuser1"
             android:background="@drawable/button_rounded_border"/>
 
         <ImageButton
@@ -107,7 +107,7 @@
             android:src="@drawable/f"
             app:layout_constraintEnd_toStartOf="@+id/imageButton4"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/BRegistUser"
+            app:layout_constraintTop_toBottomOf="@+id/reguser1"
             tools:ignore="SpeakableTextPresentCheck"
             android:background="@drawable/button_social"/>
 
@@ -120,7 +120,7 @@
             android:scaleType="fitCenter"
             android:src="@drawable/_00221"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/BRegistUser"
+            app:layout_constraintTop_toBottomOf="@+id/reguser1"
             tools:ignore="SpeakableTextPresentCheck"
             android:background="@drawable/button_social"/>
 

@@ -9,10 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.os.Bundle;
-import android.content.Intent;
 import android.widget.RelativeLayout;
-import android.widget.TextView;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -62,7 +59,7 @@ public class Home_User extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_home__user, container, false);
+        View view = inflater.inflate(R.layout.fragment_home_user, container, false);
         ImageView calendar = view.findViewById(R.id.calendar);
         calendar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -107,13 +104,6 @@ public class Home_User extends Fragment {
         });
         ImageView search1 = view.findViewById(R.id.search);
         search1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Navigation.findNavController(view).navigate(R.id.action_home_User_to_search2);
-            }
-        });
-        ImageView search2 = view.findViewById(R.id.search2);
-        search2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Navigation.findNavController(view).navigate(R.id.action_home_User_to_search2);

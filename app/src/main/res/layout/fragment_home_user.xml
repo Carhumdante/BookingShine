@@ -146,15 +146,17 @@
                                 android:id="@+id/imageView13"
                                 android:layout_width="wrap_content"
                                 android:layout_height="191dp"
-                                android:src="@drawable/hotel1" />
+                                android:contentDescription="eda"
+                                android:src="@drawable/hotel1"
+                                tools:ignore="ImageContrastCheck,ImageContrastCheck" />
 
                             <TextView
                                 android:id="@+id/textView8"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_marginLeft="10dp"
+                                android:layout_marginStart="10dp"
                                 android:fontFamily="@font/poppins_regular"
-                                android:text="Schedule Example"
+                                android:text="@string/schedule_example"
                                 android:textSize="20sp"
                                 android:textStyle="bold"
                                 android:typeface="normal" />
@@ -163,8 +165,9 @@
                                 android:id="@+id/textView10"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_marginLeft="10dp"
-                                android:text="Description" />
+                                android:layout_marginStart="10dp"
+                                android:text="Description"
+                                android:textColor="#4527A0" />
                         </LinearLayout>
 
                     </RelativeLayout>
@@ -190,7 +193,8 @@
                                 android:id="@+id/imageView15"
                                 android:layout_width="wrap_content"
                                 android:layout_height="191dp"
-                                android:src="@drawable/hotel1" />
+                                android:src="@drawable/hotel1"
+                                tools:ignore="ImageContrastCheck,ImageContrastCheck" />
 
                             <TextView
                                 android:id="@+id/textView2"
@@ -234,13 +238,14 @@
                                 android:id="@+id/imageView11"
                                 android:layout_width="wrap_content"
                                 android:layout_height="191dp"
-                                android:src="@drawable/hotel1" />
+                                android:src="@drawable/hotel1"
+                                tools:ignore="ImageContrastCheck,ImageContrastCheck" />
 
                             <TextView
                                 android:id="@+id/textView6"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_marginLeft="10dp"
+                                android:layout_marginStart="10dp"
                                 android:fontFamily="@font/poppins_regular"
                                 android:text="Schedule Example"
                                 android:textSize="20sp"

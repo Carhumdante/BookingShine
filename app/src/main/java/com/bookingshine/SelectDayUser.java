@@ -62,8 +62,8 @@ public class SelectDayUser extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view =  inflater.inflate(R.layout.fragment_select_day_user, container, false);
-        Button back = view.findViewById(R.id.backstep);
-        back.setOnClickListener(new View.OnClickListener() {
+        Button back1 = view.findViewById(R.id.backstep);
+        back1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Navigation.findNavController(view).navigate(R.id.action_selectDayUser_to_search2);
@@ -83,8 +83,8 @@ public class SelectDayUser extends Fragment {
                 Navigation.findNavController(view).navigate(R.id.action_selectDayUser_to_home_User);
             }
         });
-        Button nextday = view.findViewById(R.id.nextday);
-        nextday.setOnClickListener(new View.OnClickListener() {
+        Button nxt1 = view.findViewById(R.id.nextday);
+        nxt1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Navigation.findNavController(view).navigate(R.id.action_selectDayUser_to_selectTimeUser);

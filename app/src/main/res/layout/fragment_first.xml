@@ -17,12 +17,12 @@
             android:layout_width="160dp"
             android:layout_height="63dp"
             android:layout_marginStart="143dp"
-            android:layout_marginTop="448dp"
+            android:layout_marginTop="352dp"
             android:layout_marginEnd="143dp"
             android:background="@drawable/button_rounded"
             android:text="Login USUARIO"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.514"
+            app:layout_constraintHorizontal_bias="0.485"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -31,7 +31,7 @@
             android:layout_width="159dp"
             android:layout_height="65dp"
             android:layout_marginStart="142dp"
-            android:layout_marginTop="48dp"
+            android:layout_marginTop="76dp"
             android:layout_marginEnd="142dp"
             android:background="@drawable/button_rounded"
             android:text="Login Negocio"

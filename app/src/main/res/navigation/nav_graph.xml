@@ -33,6 +33,9 @@
         <action
             android:id="@+id/action_loginUserFragment_to_resetPasswordEmpFragment2"
             app:destination="@id/resetPasswordEmpFragment" />
+        <action
+            android:id="@+id/action_loginUserFragment_to_home_User"
+            app:destination="@id/home_User" />
     </fragment>
     <fragment
         android:id="@+id/loginEmpFragment"
@@ -48,6 +51,9 @@
         <action
             android:id="@+id/action_loginEmpFragment_to_perfilUserFragment"
             app:destination="@id/perfilUserFragment" />
+        <action
+            android:id="@+id/action_loginEmpFragment_to_homeBusiness"
+            app:destination="@id/homeBusiness" />
     </fragment>
     <fragment
         android:id="@+id/nuevoUserFragment"
@@ -71,7 +77,11 @@
         android:id="@+id/perfilUserFragment"
         android:name="com.bookingshine.PerfilUserFragment"
         android:label="fragment_perfil_user"
-        tools:layout="@layout/fragment_perfil_user" />
+        tools:layout="@layout/fragment_perfil_user" >
+        <action
+            android:id="@+id/action_perfilUserFragment_to_homeBusiness"
+            app:destination="@id/homeBusiness" />
+    </fragment>
     <fragment
         android:id="@+id/nuevoEmpFragment"
         android:name="com.bookingshine.NuevoEmpFragment"
@@ -94,5 +104,109 @@
         android:id="@+id/perfilEmpFragment"
         android:name="com.bookingshine.PerfilEmpFragment"
         android:label="fragment_perfil_emp"
-        tools:layout="@layout/fragment_perfil_emp" />
+        tools:layout="@layout/fragment_perfil_emp" >
+        <action
+            android:id="@+id/action_perfilEmpFragment_to_home_User"
+            app:destination="@id/home_User" />
+    </fragment>
+    <fragment
+        android:id="@+id/homeBusiness"
+        android:name="com.bookingshine.HomeBusiness"
+        android:label="fragment_home_business"
+        tools:layout="@layout/fragment_home_business" >
+        <action
+            android:id="@+id/action_homeBusiness_to_reasonCancel"
+            app:destination="@id/reasonCancel" />
+        <action
+            android:id="@+id/action_homeBusiness_to_rescheduleBusiness"
+            app:destination="@id/rescheduleBusiness" />
+        <action
+            android:id="@+id/action_homeBusiness_to_perfilUserFragment"
+            app:destination="@id/perfilUserFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/home_User"
+        android:name="com.bookingshine.Home_User"
+        android:label="Home_User" >
+        <action
+            android:id="@+id/action_home_User_to_complaintsandsugestions"
+            app:destination="@id/complaintsandsugestions" />
+        <action
+            android:id="@+id/action_home_User_to_reasonreschedule_user"
+            app:destination="@id/reasonreschedule_user" />
+        <action
+            android:id="@+id/action_home_User_to_search2"
+            app:destination="@id/search2" />
+        <action
+            android:id="@+id/action_home_User_to_perfilEmpFragment"
+            app:destination="@id/perfilEmpFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/search2"
+        android:name="com.bookingshine.Search"
+        android:label="fragment_search"
+        tools:layout="@layout/fragment_search" >
+        <action
+            android:id="@+id/action_search2_to_selectDayUser"
+            app:destination="@id/selectDayUser" />
+        <action
+            android:id="@+id/action_search2_to_selectTimeUser"
+            app:destination="@id/selectTimeUser" />
+        <action
+            android:id="@+id/action_search2_to_home_User"
+            app:destination="@id/home_User" />
+    </fragment>
+    <fragment
+        android:id="@+id/selectDayUser"
+        android:name="com.bookingshine.SelectDayUser"
+        android:label="fragment_select_day_user"
+        tools:layout="@layout/fragment_select_day_user" >
+        <action
+            android:id="@+id/action_selectDayUser_to_search2"
+            app:destination="@id/search2" />
+    </fragment>
+    <fragment
+        android:id="@+id/selectTimeUser"
+        android:name="com.bookingshine.SelectTimeUser"
+        android:label="fragment_select_time_user"
+        tools:layout="@layout/fragment_select_time_user" >
+        <action
+            android:id="@+id/action_selectTimeUser_to_selectDayUser"
+            app:destination="@id/selectDayUser" />
+    </fragment>
+    <fragment
+        android:id="@+id/complaintsandsugestions"
+        android:name="com.bookingshine.complaintsandsugestions"
+        android:label="fragment_complaintsandsugestions"
+        tools:layout="@layout/fragment_complaintsandsugestions" >
+        <action
+            android:id="@+id/action_complaintsandsugestions_to_home_User"
+            app:destination="@id/home_User" />
+    </fragment>
+    <fragment
+        android:id="@+id/reasonreschedule_user"
+        android:name="com.bookingshine.reasonreschedule_user"
+        android:label="reasonreschedule_user" >
+        <action
+            android:id="@+id/action_reasonreschedule_user_to_home_User"
+            app:destination="@id/home_User" />
+    </fragment>
+    <fragment
+        android:id="@+id/reasonCancel"
+        android:name="com.bookingshine.ReasonCancel"
+        android:label="fragment_reason_cancel"
+        tools:layout="@layout/fragment_reason_cancel" >
+        <action
+            android:id="@+id/action_reasonCancel_to_homeBusiness"
+            app:destination="@id/homeBusiness" />
+    </fragment>
+    <fragment
+        android:id="@+id/rescheduleBusiness"
+        android:name="com.bookingshine.rescheduleBusiness"
+        android:label="fragment_reschedule_business"
+        tools:layout="@layout/fragment_reschedule_business" >
+        <action
+            android:id="@+id/action_rescheduleBusiness_to_homeBusiness"
+            app:destination="@id/homeBusiness" />
+    </fragment>
 </navigation>

@@ -60,16 +60,17 @@ public class complaintsandsugestions extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_complaintsandsugestions, container, false);
-        //final View view = inflater.inflate(R.layout.fragment_complaintsandsugestions, container, false);
+         //Inflate the layout for this fragment
+        View view = inflater.inflate(R.layout.fragment_complaintsandsugestions, container, false);
 
-        //Button red = view.findViewById(R.id.button15);
-        //red.setOnClickListener(new View.OnClickListener() {
-        //    @Override
-        //    public void onClick(View v) {
-                //Navigation.findNavController(view).navigate(R.id.red);
-        //   }
-        //});
+        Button red = view.findViewById(R.id.button15);
+        red.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Navigation.findNavController(view).navigate(R.id.action_home_User_to_complaintsandsugestions);
+           }
+        });
+
+        return view;
     }
 }

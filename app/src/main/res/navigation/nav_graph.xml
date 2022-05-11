@@ -4,15 +4,26 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
     app:startDestination="@id/mainActivity">
-
-    <activity
-        android:id="@+id/mainActivity"
-        android:name="com.bookingshine.MainActivity"
-        android:label="activity_main"
-        tools:layout="@layout/activity_main" />
     <fragment
-        android:id="@+id/complaintsandsugestions"
-        android:name="com.bookingshine.complaintsandsugestions"
-        android:label="fragment_complaintsandsugestions"
-        tools:layout="@layout/fragment_complaintsandsugestions" />
+        android:id="@+id/firstFragment2"
+        android:name="com.bookingshine.firstFragment"
+        android:label="fragment_first"
+        tools:layout="@layout/fragment_first" >
+        <action
+            android:id="@+id/action_firstFragment2_to_loginEmpFragment"
+            app:destination="@id/loginEmpFragment" />
+        <action
+            android:id="@+id/action_firstFragment2_to_loginUserFragment3"
+            app:destination="@id/loginUserFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginUserFragment"
+        android:name="com.bookingshine.LoginUserFragment"
+        android:label="fragment_login_user"
+        tools:layout="@layout/fragment_login_user" />
+    <fragment
+        android:id="@+id/loginEmpFragment"
+        android:name="com.bookingshine.LoginEmpFragment"
+        android:label="fragment_login_emp"
+        tools:layout="@layout/fragment_login_emp" />
 </navigation>

@@ -3,10 +3,16 @@ package com.bookingshine;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.os.Bundle;
+import android.content.Intent;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -14,7 +20,7 @@ import android.view.ViewGroup;
  * create an instance of this fragment.
  */
 public class Home_User extends Fragment {
-
+    ImageView imageView;
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -44,21 +50,76 @@ public class Home_User extends Fragment {
         args.putString(ARG_PARAM2, param2);
         fragment.setArguments(args);
         return fragment;
+
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
+
         }
-    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home__user, container, false);
+        View view = inflater.inflate(R.layout.fragment_home__user, container, false);
+        ImageView calendar = view.findViewById(R.id.calendar);
+        calendar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Navigation.findNavController(view).navigate(R.id.action_home_User_to_selectDayUser);
+            }
+        });
+        ImageView profile = view.findViewById(R.id.profile);
+        profile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Navigation.findNavController(view).navigate(R.id.action_home_User_to_perfilUserFragment2);
+            }
+        });
+        ImageView suggestion = view.findViewById(R.id.suggestion);
+        suggestion.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Navigation.findNavController(view).navigate(R.id.action_home_User_to_complaintsandsugestions);
+            }
+        });
+        RelativeLayout schedule1 = view.findViewById(R.id.schedule1);
+        schedule1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Navigation.findNavController(view).navigate(R.id.action_home_User_to_selectDayUser);
+            }
+        });
+        RelativeLayout schedule2 = view.findViewById(R.id.schedule2);
+        schedule2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Navigation.findNavController(view).navigate(R.id.action_home_User_to_selectDayUser);
+            }
+        });
+        RelativeLayout schedule3 = view.findViewById(R.id.schedule3);
+        schedule3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Navigation.findNavController(view).navigate(R.id.action_home_User_to_selectDayUser);
+            }
+        });
+        ImageView search1 = view.findViewById(R.id.search);
+        search1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Navigation.findNavController(view).navigate(R.id.action_home_User_to_search2);
+            }
+        });
+        ImageView search2 = view.findViewById(R.id.search2);
+        search2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Navigation.findNavController(view).navigate(R.id.action_home_User_to_search2);
+            }
+        });
+        return view;
     }
+
 }

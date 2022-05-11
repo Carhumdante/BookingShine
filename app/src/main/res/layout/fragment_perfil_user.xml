@@ -12,7 +12,7 @@
         android:background="@color/purple_700">
 
         <ImageView
-            android:id="@+id/imageView5"
+            android:id="@+id/calendar"
             android:layout_width="175dp"
             android:layout_height="230dp"
             android:layout_marginStart="118dp"
@@ -33,10 +33,10 @@
             android:text="Nombre de usuario"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView5" />
+            app:layout_constraintTop_toBottomOf="@+id/calendar" />
 
         <Button
-            android:id="@+id/button5"
+            android:id="@+id/signoffuser"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="161dp"

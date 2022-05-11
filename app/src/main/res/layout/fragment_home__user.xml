@@ -16,20 +16,20 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/frameLayout4"
             android:layout_width="66dp"
-            android:layout_height="746dp"
+            android:layout_height="match_parent"
             android:background="#946200EE">
 
             <ImageView
-                android:id="@+id/imageView5"
+                android:id="@+id/calendar"
                 android:layout_width="wrap_content"
                 android:layout_height="50dp"
                 android:layout_marginTop="10dp"
                 android:src="@drawable/calendar"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+                app:layout_constraintTop_toBottomOf="@+id/profile" />
 
             <ImageView
-                android:id="@+id/imageView4"
+                android:id="@+id/profile"
                 android:layout_width="0dp"
                 android:layout_height="50dp"
                 android:layout_marginStart="8dp"
@@ -42,13 +42,13 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <ImageView
-                android:id="@+id/imageView6"
+                android:id="@+id/settings1"
                 android:layout_width="wrap_content"
                 android:layout_height="30dp"
                 android:layout_marginTop="5dp"
                 android:src="@drawable/settings"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/imageView5" />
+                app:layout_constraintTop_toBottomOf="@+id/calendar" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -56,7 +56,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/frameLayout3"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="654dp"
             android:background="#226200EE">
 
             <LinearLayout
@@ -70,6 +70,7 @@
                 tools:ignore="MissingConstraints">
 
                 <RelativeLayout
+                    android:id="@+id/search2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="62dp"
@@ -125,9 +126,12 @@
                     android:orientation="vertical">
 
                     <RelativeLayout
+                        android:id="@+id/schedule1"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_marginLeft="5dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="5dp"
                         android:layout_marginRight="5dp"
                         android:background="@drawable/border">
 
@@ -166,9 +170,12 @@
                     </RelativeLayout>
 
                     <RelativeLayout
+                        android:id="@+id/schedule2"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_marginLeft="5dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="5dp"
                         android:layout_marginRight="5dp"
                         android:background="@drawable/border">
 
@@ -207,10 +214,12 @@
                     </RelativeLayout>
 
                     <RelativeLayout
+                        android:id="@+id/schedule3"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_marginLeft="5dp"
-                        android:layout_marginTop="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="5dp"
                         android:layout_marginRight="5dp"
                         android:background="@drawable/border">
 
@@ -282,11 +291,13 @@
             android:textAlignment="center">
 
             <ImageView
+                android:id="@+id/suggestion"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:src="@drawable/buzon" />
 
             <ImageView
+                android:id="@+id/menu"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:layout_marginLeft="50dp"
@@ -294,6 +305,7 @@
                 android:src="@drawable/logo" />
 
             <ImageView
+                android:id="@+id/search"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:src="@drawable/lupa" />

@@ -10,11 +10,11 @@
         android:label="fragment_first"
         tools:layout="@layout/fragment_first">
         <action
-            android:id="@+id/action_firstFragment2_to_loginEmpFragment"
-            app:destination="@id/loginEmpFragment" />
-        <action
             android:id="@+id/action_firstFragment2_to_loginUserFragment3"
             app:destination="@id/loginUserFragment" />
+        <action
+            android:id="@+id/action_firstFragment2_to_loginEmpFragment"
+            app:destination="@id/loginEmpFragment" />
     </fragment>
     <fragment
         android:id="@+id/loginUserFragment"
@@ -22,20 +22,14 @@
         android:label="fragment_login_user"
         tools:layout="@layout/fragment_login_user" >
         <action
-            android:id="@+id/action_loginUserFragment_to_nuevoEmpFragment"
-            app:destination="@id/nuevoEmpFragment" />
-        <action
-            android:id="@+id/action_loginUserFragment_to_resetPasswordEmpFragment"
-            app:destination="@id/resetPasswordEmpFragment" />
-        <action
-            android:id="@+id/action_loginUserFragment_to_perfilEmpFragment"
-            app:destination="@id/perfilEmpFragment" />
-        <action
-            android:id="@+id/action_loginUserFragment_to_resetPasswordEmpFragment2"
-            app:destination="@id/resetPasswordEmpFragment" />
-        <action
             android:id="@+id/action_loginUserFragment_to_home_User"
             app:destination="@id/home_User" />
+        <action
+            android:id="@+id/action_loginUserFragment_to_resetPasswordUserFragment"
+            app:destination="@id/resetPasswordUserFragment" />
+        <action
+            android:id="@+id/action_loginUserFragment_to_signinbussines2"
+            app:destination="@id/signinbussines2" />
     </fragment>
     <fragment
         android:id="@+id/loginEmpFragment"
@@ -46,12 +40,6 @@
             android:id="@+id/action_loginEmpFragment_to_nuevoUserFragment"
             app:destination="@id/nuevoUserFragment" />
         <action
-            android:id="@+id/action_loginEmpFragment_to_resetPasswordUserFragment"
-            app:destination="@id/resetPasswordUserFragment" />
-        <action
-            android:id="@+id/action_loginEmpFragment_to_perfilUserFragment"
-            app:destination="@id/perfilUserFragment" />
-        <action
             android:id="@+id/action_loginEmpFragment_to_homeBusiness"
             app:destination="@id/homeBusiness" />
     </fragment>
@@ -61,53 +49,8 @@
         android:label="fragment_nuevo_user"
         tools:layout="@layout/fragment_nuevo_user" >
         <action
-            android:id="@+id/action_nuevoUserFragment_to_perfilUserFragment"
-            app:destination="@id/perfilUserFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/resetPasswordUserFragment"
-        android:name="com.bookingshine.ResetPasswordUserFragment"
-        android:label="fragment_reset_password_user"
-        tools:layout="@layout/fragment_reset_password_user" >
-        <action
-            android:id="@+id/action_resetPasswordUserFragment_to_loginEmpFragment"
-            app:destination="@id/loginEmpFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/perfilUserFragment"
-        android:name="com.bookingshine.PerfilUserFragment"
-        android:label="fragment_perfil_user"
-        tools:layout="@layout/fragment_perfil_user" >
-        <action
-            android:id="@+id/action_perfilUserFragment_to_homeBusiness"
+            android:id="@+id/action_nuevoUserFragment_to_homeBusiness"
             app:destination="@id/homeBusiness" />
-    </fragment>
-    <fragment
-        android:id="@+id/nuevoEmpFragment"
-        android:name="com.bookingshine.NuevoEmpFragment"
-        android:label="fragment_nuevo_emp"
-        tools:layout="@layout/fragment_nuevo_emp" >
-        <action
-            android:id="@+id/action_nuevoEmpFragment_to_perfilEmpFragment"
-            app:destination="@id/perfilEmpFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/resetPasswordEmpFragment"
-        android:name="com.bookingshine.ResetPasswordEmpFragment"
-        android:label="fragment_reset_password_emp"
-        tools:layout="@layout/fragment_reset_password_emp" >
-        <action
-            android:id="@+id/action_resetPasswordEmpFragment_to_loginUserFragment"
-            app:destination="@id/loginUserFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/perfilEmpFragment"
-        android:name="com.bookingshine.PerfilEmpFragment"
-        android:label="fragment_perfil_emp"
-        tools:layout="@layout/fragment_perfil_emp" >
-        <action
-            android:id="@+id/action_perfilEmpFragment_to_home_User"
-            app:destination="@id/home_User" />
     </fragment>
     <fragment
         android:id="@+id/homeBusiness"
@@ -118,11 +61,8 @@
             android:id="@+id/action_homeBusiness_to_reasonCancel"
             app:destination="@id/reasonCancel" />
         <action
-            android:id="@+id/action_homeBusiness_to_rescheduleBusiness"
-            app:destination="@id/rescheduleBusiness" />
-        <action
-            android:id="@+id/action_homeBusiness_to_perfilUserFragment"
-            app:destination="@id/perfilUserFragment" />
+            android:id="@+id/action_homeBusiness_to_profile_Bussines"
+            app:destination="@id/profile_Bussines" />
     </fragment>
     <fragment
         android:id="@+id/home_User"
@@ -138,8 +78,14 @@
             android:id="@+id/action_home_User_to_search2"
             app:destination="@id/search2" />
         <action
-            android:id="@+id/action_home_User_to_perfilEmpFragment"
-            app:destination="@id/perfilEmpFragment" />
+            android:id="@+id/action_home_User_to_reasonCancel"
+            app:destination="@id/reasonCancel" />
+        <action
+            android:id="@+id/action_home_User_to_perfilUserFragment2"
+            app:destination="@id/perfilUserFragment2" />
+        <action
+            android:id="@+id/action_home_User_to_selectDayUser"
+            app:destination="@id/selectDayUser" />
     </fragment>
     <fragment
         android:id="@+id/search2"
@@ -164,6 +110,12 @@
         <action
             android:id="@+id/action_selectDayUser_to_search2"
             app:destination="@id/search2" />
+        <action
+            android:id="@+id/action_selectDayUser_to_home_User"
+            app:destination="@id/home_User" />
+        <action
+            android:id="@+id/action_selectDayUser_to_selectTimeUser"
+            app:destination="@id/selectTimeUser" />
     </fragment>
     <fragment
         android:id="@+id/selectTimeUser"
@@ -173,6 +125,9 @@
         <action
             android:id="@+id/action_selectTimeUser_to_selectDayUser"
             app:destination="@id/selectDayUser" />
+        <action
+            android:id="@+id/action_selectTimeUser_to_home_User"
+            app:destination="@id/home_User" />
     </fragment>
     <fragment
         android:id="@+id/complaintsandsugestions"
@@ -199,14 +154,53 @@
         <action
             android:id="@+id/action_reasonCancel_to_homeBusiness"
             app:destination="@id/homeBusiness" />
+        <action
+            android:id="@+id/action_reasonCancel_to_home_User"
+            app:destination="@id/home_User" />
     </fragment>
     <fragment
-        android:id="@+id/rescheduleBusiness"
-        android:name="com.bookingshine.rescheduleBusiness"
-        android:label="fragment_reschedule_business"
-        tools:layout="@layout/fragment_reschedule_business" >
+        android:id="@+id/signinbussines2"
+        android:name="com.bookingshine.signinbussines"
+        android:label="signinbussines" >
         <action
-            android:id="@+id/action_rescheduleBusiness_to_homeBusiness"
+            android:id="@+id/action_signinbussines2_to_homeBusiness"
             app:destination="@id/homeBusiness" />
+        <action
+            android:id="@+id/action_signinbussines2_to_ressetpassword_bussines"
+            app:destination="@id/ressetpassword_bussines" />
+    </fragment>
+    <fragment
+        android:id="@+id/profile_Bussines"
+        android:name="com.bookingshine.Profile_Bussines"
+        android:label="Profile_Bussines" >
+        <action
+            android:id="@+id/action_profile_Bussines_to_firstFragment2"
+            app:destination="@id/firstFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/ressetpassword_bussines"
+        android:name="com.bookingshine.ressetpassword_bussines"
+        android:label="ressetpassword_bussines" >
+        <action
+            android:id="@+id/action_ressetpassword_bussines_to_loginEmpFragment"
+            app:destination="@id/loginEmpFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/perfilUserFragment2"
+        android:name="com.bookingshine.PerfilUserFragment"
+        android:label="fragment_perfil_user"
+        tools:layout="@layout/fragment_perfil_user" >
+        <action
+            android:id="@+id/action_perfilUserFragment2_to_firstFragment2"
+            app:destination="@id/firstFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/resetPasswordUserFragment"
+        android:name="com.bookingshine.ResetPasswordUserFragment"
+        android:label="fragment_reset_password_user"
+        tools:layout="@layout/fragment_reset_password_user" >
+        <action
+            android:id="@+id/action_resetPasswordUserFragment_to_loginUserFragment"
+            app:destination="@id/loginUserFragment" />
     </fragment>
 </navigation>

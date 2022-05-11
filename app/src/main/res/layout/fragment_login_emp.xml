@@ -62,16 +62,17 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="138dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="8dp"
             android:layout_marginEnd="132dp"
+            android:backgroundTint="@color/design_default_color_primary"
             android:ems="10"
             android:hint="Password"
             android:inputType="textPassword"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName2"
-            tools:ignore="TouchTargetSizeCheck"
-            android:backgroundTint="@color/design_default_color_primary"/>
+            tools:ignore="TouchTargetSizeCheck" />
 
         <Button
             android:id="@+id/BLoginEmp"

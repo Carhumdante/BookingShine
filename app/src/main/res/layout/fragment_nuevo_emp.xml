@@ -84,7 +84,7 @@
             android:backgroundTint="@color/design_default_color_primary"/>
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/homeuser1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="161dp"

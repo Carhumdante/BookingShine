@@ -71,11 +71,12 @@ public class firstFragment extends Fragment {
         });
 
         Button loginNeg = view.findViewById(R.id.loginNeg);
-        loginNeg.setOnClickListener(new View.OnClickListener(){
-                public void onClick(View view) {
-                    Navigation.findNavController(view).navigate(R.id.action_firstFragment2_to_loginEmpFragment);
-                }
+        loginNeg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Navigation.findNavController(view).navigate(R.id.action_firstFragment2_to_loginEmpFragment);
 
+            }
         });
 
         return view;

@@ -6,4 +6,8 @@
     <string name="subject">Subject</string>
     <string name="description">description</string>
     <string name="descriptiontext">Description</string>
+    <string name="back">Back</string>
+    <string name="home">HOME</string>
+    <string name="cancel">CANCEL</string>
+    <string name="ok">OK</string>
 </resources>

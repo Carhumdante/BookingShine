@@ -73,7 +73,7 @@ public class LoginEmpFragment extends Fragment {
         register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Navigation.findNavController(view).navigate(R.id.action_loginEmpFragment_to_nuevoUserFragment);
+                Navigation.findNavController(view).navigate(R.id.action_loginEmpFragment_to_signinbussines2);
             }
         });
         return view;

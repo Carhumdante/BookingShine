@@ -62,11 +62,11 @@ public class NuevoEmpFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_nuevo_emp, container, false);
 
-        Button button = view.findViewById(R.id.button);
+        Button button = view.findViewById(R.id.homeuser1);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Navigation.findNavController(view).navigate(R.id.action_nuevoEmpFragment_to_perfilEmpFragment);
+                Navigation.findNavController(view).navigate(R.id.action_nuevoUserFragment_to_home_User2);
             }
         });
 

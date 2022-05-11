@@ -64,7 +64,7 @@ public class NuevoUserFragment extends Fragment {
         regisUser.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Navigation.findNavController(view).navigate(R.id.action_nuevoUserFragment_to_homeBusiness);
+                Navigation.findNavController(view).navigate(R.id.action_nuevoUserFragment_to_home_User2);
             }
         });
         return view;

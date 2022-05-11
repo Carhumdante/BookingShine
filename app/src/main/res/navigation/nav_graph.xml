@@ -28,8 +28,8 @@
             android:id="@+id/action_loginUserFragment_to_resetPasswordUserFragment"
             app:destination="@id/resetPasswordUserFragment" />
         <action
-            android:id="@+id/action_loginUserFragment_to_signinbussines2"
-            app:destination="@id/signinbussines2" />
+            android:id="@+id/action_loginUserFragment_to_nuevoUserFragment"
+            app:destination="@id/nuevoUserFragment" />
     </fragment>
     <fragment
         android:id="@+id/loginEmpFragment"
@@ -37,11 +37,11 @@
         android:label="fragment_login_emp"
         tools:layout="@layout/fragment_login_emp" >
         <action
-            android:id="@+id/action_loginEmpFragment_to_nuevoUserFragment"
-            app:destination="@id/nuevoUserFragment" />
-        <action
             android:id="@+id/action_loginEmpFragment_to_homeBusiness"
             app:destination="@id/homeBusiness" />
+        <action
+            android:id="@+id/action_loginEmpFragment_to_signinbussines2"
+            app:destination="@id/signinbussines2" />
     </fragment>
     <fragment
         android:id="@+id/nuevoUserFragment"
@@ -49,8 +49,8 @@
         android:label="fragment_nuevo_user"
         tools:layout="@layout/fragment_nuevo_user" >
         <action
-            android:id="@+id/action_nuevoUserFragment_to_homeBusiness"
-            app:destination="@id/homeBusiness" />
+            android:id="@+id/action_nuevoUserFragment_to_home_User2"
+            app:destination="@id/home_User" />
     </fragment>
     <fragment
         android:id="@+id/homeBusiness"

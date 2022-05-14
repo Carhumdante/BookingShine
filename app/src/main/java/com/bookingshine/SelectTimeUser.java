@@ -77,13 +77,6 @@ public class SelectTimeUser extends Fragment {
                 Navigation.findNavController(view).navigate(R.id.action_selectTimeUser_to_home_User);
             }
         });
-        Button cancel1 = view.findViewById(R.id.backstep);
-        cancel1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Navigation.findNavController(view).navigate(R.id.action_selectTimeUser_to_home_User);
-            }
-        });
-        return view;
+       return view;
     }
 }

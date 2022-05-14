@@ -3,10 +3,13 @@ package com.bookingshine;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.TextView;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -59,6 +62,15 @@ public class ressetpassword_bussines extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_ressetpassword_bussines, container, false);
+        View view =  inflater.inflate(R.layout.fragment_ressetpassword_bussines, container, false);
+        TextView resetConfirm = view.findViewById(R.id.resetConfirm);
+        resetConfirm.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Navigation.findNavController(view).navigate(R.id.action_ressetpassword_bussines_to_loginEmpFragment);
+            }
+        });
+
+        return view;
     }
 }

@@ -20,15 +20,19 @@
 
     <ImageView
         android:id="@+id/imageView21"
-        android:layout_width="90dp"
-        android:layout_height="87dp"
+        android:layout_width="256dp"
+        android:layout_height="114dp"
         android:layout_marginTop="5dp"
         android:layout_marginBottom="1dp"
         android:contentDescription="@string/avatar"
         app:layout_constraintBottom_toTopOf="@+id/scrollView3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/searchView"
-        tools:src="@tools:sample/avatars" />
+        app:layout_constraintVertical_bias="0.479"
+        tools:ignore="ImageContrastCheck"
+        tools:src="@tools:sample/backgrounds/scenic" />
 
     <ScrollView
         android:id="@+id/scrollView3"
@@ -44,13 +48,29 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
+            <TextView
+                android:id="@+id/textView13"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/BusinessName"
+                android:textColor="#E3F2FD" />
+
             <EditText
                 android:id="@+id/editTextNumber"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:inputType="number"
+                android:minHeight="48dp"
+                android:textColor="#E3F2FD"
                 tools:text="@tools:sample/full_names" />
+
+            <TextView
+                android:id="@+id/textView14"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/BusinessLocation"
+                android:textColor="#E3F2FD" />
 
             <EditText
                 android:id="@+id/editTextTime"
@@ -58,7 +78,16 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:inputType="time"
+                android:minHeight="48dp"
+                android:textColor="#E3F2FD"
                 tools:text="@tools:sample/date/hhmm" />
+
+            <TextView
+                android:id="@+id/textView15"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/BusinessAtentionTime"
+                android:textColor="#E3F2FD" />
 
             <EditText
                 android:id="@+id/editTextDate"
@@ -66,6 +95,8 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:inputType="date"
+                android:minHeight="48dp"
+                android:textColor="#E3F2FD"
                 tools:text="@tools:sample/date/ddmmyy" />
 
         </LinearLayout>

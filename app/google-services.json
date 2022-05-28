@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "750110740274",
+    "project_id": "bookingshine-a86d7",
+    "storage_bucket": "bookingshine-a86d7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:750110740274:android:2ceadd6588ecaa924b112b",
+        "android_client_info": {
+          "package_name": "com.bookingshine"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "750110740274-culpss48kimr6dije52qlf7bq2ou487u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDFjG_8QVLTXoZjNO2WLytSu3tpDtlYsH0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "750110740274-culpss48kimr6dije52qlf7bq2ou487u.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

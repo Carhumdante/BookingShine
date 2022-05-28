@@ -18,4 +18,6 @@
     <string name="BusinessAtentionTime">Atention Time</string>
     <string name="BusinessLogin">Business Login</string>
     <string name="Password">Password</string>
+    <string name="BusinessContact">BusinessContact</string>
+    <string name="SignOff">Sign Off</string>
 </resources>

@@ -16,4 +16,6 @@
     <string name="BusinessName">Business Name</string>
     <string name="BusinessLocation">Business Location</string>
     <string name="BusinessAtentionTime">Atention Time</string>
+    <string name="BusinessLogin">Business Login</string>
+    <string name="Password">Password</string>
 </resources>

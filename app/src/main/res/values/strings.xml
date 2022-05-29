@@ -20,4 +20,7 @@
     <string name="Password">Password</string>
     <string name="BusinessContact">BusinessContact</string>
     <string name="SignOff">Sign Off</string>
+    <string name="Login">Login</string>
+    <string name="BusinessSignIn">Business Sign in</string>
+    <string name="msgToastSuccess">Record is inserted</string>
 </resources>

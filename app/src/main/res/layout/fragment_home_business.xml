@@ -8,98 +8,56 @@
     android:background="@drawable/blue_bg"
     tools:context=".HomeBusiness" >
 
-    <SearchView
-        android:id="@+id/searchView"
-        android:layout_width="410dp"
-        android:layout_height="81dp"
-        android:layout_marginTop="16dp"
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="414dp"
+        android:layout_height="180dp"
+        android:layout_marginTop="4dp"
+        android:src="@drawable/business"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.666"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/imageView21"
-        android:layout_width="256dp"
-        android:layout_height="114dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginBottom="1dp"
-        android:contentDescription="@string/avatar"
-        app:layout_constraintBottom_toTopOf="@+id/scrollView3"
+    <ListView
+        android:id="@+id/listDates"
+        android:layout_width="380dp"
+        android:layout_height="368dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/searchView"
-        app:layout_constraintVertical_bias="0.479"
-        tools:ignore="ImageContrastCheck"
-        tools:src="@tools:sample/backgrounds/scenic" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView4" />
 
-    <ScrollView
-        android:id="@+id/scrollView3"
-        android:layout_width="402dp"
-        android:layout_height="506dp"
-        android:layout_marginBottom="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="68dp"
+        android:layout_marginEnd="68dp"
+        android:text="Button"
+        app:layout_constraintEnd_toStartOf="@+id/button2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/listDates" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="64dp"
+        android:text="Button"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/listDates" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/textView13"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/BusinessName"
-                android:textColor="#E3F2FD" />
-
-            <EditText
-                android:id="@+id/editTextNumber"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="number"
-                android:minHeight="48dp"
-                android:textColor="#E3F2FD"
-                tools:text="@tools:sample/full_names" />
-
-            <TextView
-                android:id="@+id/textView14"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/BusinessLocation"
-                android:textColor="#E3F2FD" />
-
-            <EditText
-                android:id="@+id/editTextTime"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="time"
-                android:minHeight="48dp"
-                android:textColor="#E3F2FD"
-                tools:text="@tools:sample/date/hhmm" />
-
-            <TextView
-                android:id="@+id/textView15"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/BusinessAtentionTime"
-                android:textColor="#E3F2FD" />
-
-            <EditText
-                android:id="@+id/editTextDate"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="date"
-                android:minHeight="48dp"
-                android:textColor="#E3F2FD"
-                tools:text="@tools:sample/date/ddmmyy" />
-
-        </LinearLayout>
-    </ScrollView>
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="37dp"
+        android:layout_marginTop="64dp"
+        android:text="Button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/button2"
+        app:layout_constraintTop_toBottomOf="@+id/listDates" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

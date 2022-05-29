@@ -1,20 +1,19 @@
 package com.bookingshine;
 
-import android.util.Log;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import java.util.HashMap;
 
-public class DAOBusinessSignIn {
+public class DAOBusinessUsers {
     private DatabaseReference databaseReference;
-    public DAOBusinessSignIn()
+    public DAOBusinessUsers()
     {
         FirebaseDatabase db =FirebaseDatabase.getInstance();
-        databaseReference = db.getReference(BusinessSignIn.class.getSimpleName());
+        databaseReference = db.getReference(BusinessUsers.class.getSimpleName());
     }
-    public Task<Void> add(BusinessSignIn signinB)
+    public Task<Void> add(BusinessUsers signinB)
     {
         return databaseReference.push().setValue(signinB);
     }

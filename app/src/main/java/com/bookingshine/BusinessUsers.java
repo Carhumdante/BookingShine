@@ -2,16 +2,16 @@ package com.bookingshine;
 
 import com.google.firebase.database.Exclude;
 
-public class BusinessSignIn {
+public class BusinessUsers {
 
     @Exclude
 
     private String email;
     private String password;
 
-    public BusinessSignIn(){}
+    public BusinessUsers(){}
 
-    public BusinessSignIn(String email, String password) {
+    public BusinessUsers(String email, String password) {
         this.email = email;
         this.password = password;
     }

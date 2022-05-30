@@ -9,8 +9,6 @@ import android.widget.Button;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 
-import kotlin.reflect.KFunction;
-
 public class LoginUserFragment extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
@@ -58,7 +56,7 @@ public class LoginUserFragment extends Fragment {
             }
 
         });
-        Button regisUser = view.findViewById(R.id.reguser1);
+        Button regisUser = view.findViewById(R.id.RegUser1);
         regisUser.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

@@ -35,15 +35,15 @@
             app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
         <EditText
-            android:id="@+id/editTextUsernameU"
+            android:id="@+id/editTextEmailU"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="100dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="40dp"
             android:layout_marginEnd="100dp"
             android:backgroundTint="@color/design_default_color_primary"
             android:ems="10"
-            android:hint="Username"
+            android:hint="Email"
             android:inputType="textPersonName"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -52,29 +52,11 @@
             tools:ignore="TouchTargetSizeCheck" />
 
         <EditText
-            android:id="@+id/editTextEmailU"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="100dp"
-            android:layout_marginEnd="100dp"
-            android:layout_marginBottom="4dp"
-            android:backgroundTint="@color/design_default_color_primary"
-            android:ems="10"
-            android:hint="Email"
-            android:inputType="textPersonName"
-            app:layout_constraintBottom_toTopOf="@+id/editTextPasswordU"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextTextUsername"
-            tools:ignore="TouchTargetSizeCheck" />
-
-        <EditText
             android:id="@+id/editTextPasswordU"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="100dp"
-            android:layout_marginTop="68dp"
+            android:layout_marginTop="20dp"
             android:layout_marginEnd="100dp"
             android:backgroundTint="@color/design_default_color_primary"
             android:ems="10"
@@ -83,7 +65,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextTextUsername"
+            app:layout_constraintTop_toBottomOf="@+id/editTextEmailU"
             tools:ignore="TouchTargetSizeCheck" />
 
         <Button
@@ -100,7 +82,7 @@
             app:layout_constraintTop_toBottomOf="@+id/editTextPasswordU" />
 
         <Button
-            android:id="@+id/reguser1"
+            android:id="@+id/RegUser1"
             android:layout_width="211dp"
             android:layout_height="56dp"
             android:layout_marginStart="100dp"
@@ -125,7 +107,7 @@
             android:src="@drawable/_00221"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/imageButton3"
-            app:layout_constraintTop_toBottomOf="@+id/reguser1"
+            app:layout_constraintTop_toBottomOf="@+id/RegUser1"
             tools:ignore="SpeakableTextPresentCheck" />
 
         <ImageButton
@@ -141,7 +123,7 @@
             app:layout_constraintEnd_toStartOf="@+id/imageButton4"
             app:layout_constraintHorizontal_bias="0.533"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/reguser1"
+            app:layout_constraintTop_toBottomOf="@+id/RegUser1"
             tools:ignore="SpeakableTextPresentCheck" />
 
         <ImageView

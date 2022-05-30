@@ -4,126 +4,96 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_centerInParent="false"
-    android:layout_centerHorizontal="false"
-    android:layout_centerVertical="false"
-    android:focusableInTouchMode="false"
-    android:foregroundTint="#2196F3"
-    android:isScrollContainer="false"
-    android:scrollbarStyle="outsideOverlay"
-    android:verticalScrollbarPosition="right"
-    tools:context=".LoginUserFragment">
+    tools:context=".NuevoUserFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/purple_700">
 
-        <EditText
-            android:id="@+id/editTextEmailU"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="100dp"
-            android:layout_marginEnd="101dp"
-            android:backgroundTint="@color/design_default_color_primary"
-            android:ems="10"
-            android:hint="Email"
-            android:inputType="textPersonName"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView"
-            tools:ignore="TouchTargetSizeCheck" />
-
-        <EditText
-            android:id="@+id/editTextPasswordU"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="100dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="101dp"
-            android:backgroundTint="@color/design_default_color_primary"
-            android:ems="10"
-            android:hint="Password"
-            android:inputType="textPassword"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextEmailU"
-            tools:ignore="TouchTargetSizeCheck" />
-
-        <Button
-            android:id="@+id/RegUser1"
-            android:layout_width="211dp"
-            android:layout_height="56dp"
-            android:layout_marginTop="15dp"
-            android:background="@drawable/button_rounded_border"
-            android:text="Register"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextPasswordU" />
-
-        <ImageButton
-            android:id="@+id/imageButton4"
-            android:layout_width="64dp"
-            android:layout_height="72dp"
-            android:layout_marginStart="31dp"
-            android:layout_marginEnd="126dp"
-            android:layout_marginBottom="55dp"
-            android:background="@drawable/button_social"
-            android:scaleType="fitCenter"
-            android:src="@drawable/_00221"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/imageButton3"
-            app:layout_constraintTop_toBottomOf="@+id/textView9"
-            tools:ignore="SpeakableTextPresentCheck" />
-
-        <ImageButton
-            android:id="@+id/imageButton3"
-            android:layout_width="64dp"
-            android:layout_height="75dp"
-            android:layout_marginStart="126dp"
-            android:layout_marginEnd="31dp"
-            android:layout_marginBottom="55dp"
-            android:background="@drawable/button_social"
-            android:scaleType="fitCenter"
-            android:src="@drawable/f"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/imageButton4"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView9"
-            tools:ignore="SpeakableTextPresentCheck" />
-
         <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="168dp"
-            android:layout_height="142dp"
-            android:layout_marginStart="121dp"
-            android:layout_marginTop="56dp"
-            android:layout_marginEnd="122dp"
+            android:id="@+id/imageView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="110dp"
+            android:layout_marginTop="93dp"
+            android:layout_marginEnd="111dp"
             android:src="@drawable/logo"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/textView9"
+            android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="200dp"
-            android:layout_marginTop="25dp"
-            android:layout_marginEnd="200dp"
-            android:text="Or"
+            android:layout_marginStart="143dp"
+            android:layout_marginTop="33dp"
+            android:layout_marginEnd="143dp"
+            android:text="@string/register_new_user"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/RegUser1" /><![CDATA[
+            app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
-        />
+        <EditText
+            android:id="@+id/editTextTextPersonName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="98dp"
+            android:layout_marginTop="63dp"
+            android:layout_marginEnd="104dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView2"
+            tools:ignore="TouchTargetSizeCheck"
+            android:hint="@string/name_user"
+            android:backgroundTint="@color/design_default_color_primary"/>
 
-    ]]>
+        <EditText
+            android:id="@+id/editTextTextPersonName3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="98dp"
+            android:layout_marginTop="13dp"
+            android:layout_marginEnd="104dp"
+            android:ems="10"
+            android:hint="@string/email"
+            android:inputType="textPersonName"
+            android:minHeight="48dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName"
+            android:backgroundTint="@color/design_default_color_primary"/>
+
+        <EditText
+            android:id="@+id/editTextTextPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="98dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="104dp"
+            android:ems="10"
+            android:hint="@string/Password"
+            android:inputType="textPassword"
+            android:minHeight="48dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName3"
+            android:backgroundTint="@color/design_default_color_primary"/>
+
+        <Button
+            android:id="@+id/homeuser1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="161dp"
+            android:layout_marginTop="64dp"
+            android:layout_marginEnd="162dp"
+            android:text="@string/sing_in"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword"
+            android:background="@drawable/button_rounded"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
-
 </FrameLayout>

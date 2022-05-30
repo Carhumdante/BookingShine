@@ -26,7 +26,7 @@
             android:layout_marginStart="179dp"
             android:layout_marginTop="4dp"
             android:layout_marginEnd="178dp"
-            android:text="Login usuario"
+            android:text="@string/login_usuario"
             android:textColor="#F9FBFB"
             android:textSize="20sp"
             android:textStyle="bold"
@@ -35,96 +35,94 @@
             app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
         <EditText
-            android:id="@+id/editTextEmailU"
+            android:id="@+id/editTextTextPersonName2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="100dp"
-            android:layout_marginTop="40dp"
-            android:layout_marginEnd="100dp"
-            android:backgroundTint="@color/design_default_color_primary"
+            android:layout_marginStart="138dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginEnd="132dp"
+            android:layout_marginBottom="5dp"
             android:ems="10"
-            android:hint="Email"
+            android:hint="@string/email"
             android:inputType="textPersonName"
+            app:layout_constraintBottom_toTopOf="@+id/editTextTextPassword2"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView"
-            tools:ignore="TouchTargetSizeCheck" />
+            tools:ignore="TouchTargetSizeCheck"
+            android:backgroundTint="@color/design_default_color_primary"/>
 
         <EditText
-            android:id="@+id/editTextPasswordU"
+            android:id="@+id/editTextTextPassword2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="100dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="100dp"
-            android:backgroundTint="@color/design_default_color_primary"
+            android:layout_marginStart="138dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="132dp"
             android:ems="10"
-            android:hint="Password"
+            android:hint="@string/Password"
             android:inputType="textPassword"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextEmailU"
-            tools:ignore="TouchTargetSizeCheck" />
+            app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName2"
+            tools:ignore="TouchTargetSizeCheck"
+            android:backgroundTint="@color/design_default_color_primary"/>
 
         <Button
             android:id="@+id/loginuser1"
             android:layout_width="211dp"
             android:layout_height="56dp"
-            android:layout_marginStart="100dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="100dp"
-            android:background="@drawable/button_rounded"
-            android:text="Login"
+            android:layout_marginStart="187dp"
+            android:layout_marginTop="28dp"
+            android:layout_marginEnd="199dp"
+            android:text="@string/login"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.418"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextPasswordU" />
+            app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword2"
+            android:background="@drawable/button_rounded"/>
 
         <Button
-            android:id="@+id/RegUser1"
+            android:id="@+id/reguser1"
             android:layout_width="211dp"
             android:layout_height="56dp"
-            android:layout_marginStart="100dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="100dp"
-            android:background="@drawable/button_rounded_border"
-            android:text="Register"
+            android:layout_marginStart="187dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="199dp"
+            android:text="@string/register"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintHorizontal_bias="0.418"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/loginuser1" />
-
-        <ImageButton
-            android:id="@+id/imageButton4"
-            android:layout_width="64dp"
-            android:layout_height="72dp"
-            android:layout_marginStart="12dp"
-            android:layout_marginTop="32dp"
-            android:layout_marginEnd="120dp"
-            android:background="@drawable/button_social"
-            android:scaleType="fitCenter"
-            android:src="@drawable/_00221"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/imageButton3"
-            app:layout_constraintTop_toBottomOf="@+id/RegUser1"
-            tools:ignore="SpeakableTextPresentCheck" />
+            app:layout_constraintTop_toBottomOf="@+id/loginuser1"
+            android:background="@drawable/button_rounded_border"/>
 
         <ImageButton
             android:id="@+id/imageButton3"
             android:layout_width="64dp"
             android:layout_height="75dp"
             android:layout_marginStart="121dp"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="41dp"
             android:layout_marginEnd="12dp"
-            android:background="@drawable/button_social"
             android:scaleType="fitCenter"
             android:src="@drawable/f"
             app:layout_constraintEnd_toStartOf="@+id/imageButton4"
-            app:layout_constraintHorizontal_bias="0.533"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/RegUser1"
-            tools:ignore="SpeakableTextPresentCheck" />
+            app:layout_constraintTop_toBottomOf="@+id/reguser1"
+            tools:ignore="SpeakableTextPresentCheck"
+            android:background="@drawable/button_social"/>
+
+        <ImageButton
+            android:id="@+id/imageButton4"
+            android:layout_width="64dp"
+            android:layout_height="72dp"
+            android:layout_marginTop="44dp"
+            android:layout_marginEnd="112dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/_00221"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/reguser1"
+            tools:ignore="SpeakableTextPresentCheck"
+            android:background="@drawable/button_social"/>
 
         <ImageView
             android:id="@+id/imageView"

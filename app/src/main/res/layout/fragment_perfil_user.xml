@@ -30,7 +30,7 @@
             android:layout_marginStart="146dp"
             android:layout_marginTop="40dp"
             android:layout_marginEnd="146dp"
-            android:text="Nombre de usuario"
+            android:text="@string/name_user"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/calendar" />
@@ -46,20 +46,20 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView8"
             android:background="@drawable/button_rounded"
-            android:text="Sign off "/>
+            android:text="@string/sing_in"/>
 
         <TextView
             android:id="@+id/textView8"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="165dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="165dp"
-            android:text="Phone|Email"
+            android:layout_marginStart="161dp"
+            android:layout_marginTop="19dp"
+            android:layout_marginEnd="172dp"
+            android:text="@string/phone_email"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView7" />
+            app:layout_constraintTop_toBottomOf="@+id/textView7"
+            />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>

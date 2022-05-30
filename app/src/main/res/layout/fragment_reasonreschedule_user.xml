@@ -12,7 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="19dp"
         android:layout_marginTop="24dp"
-        android:text="Reason to Reschedule"
+        android:text="@string/reason_to_reschedule"
         android:textColor="@color/black"
         android:textSize="16sp"
         android:textStyle="bold"

@@ -33,7 +33,7 @@
             android:id="@+id/textView5"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Contact Information"
+            android:text="@string/contact_information"
             android:textAlignment="center" />
 
         <RelativeLayout
@@ -61,7 +61,7 @@
                 android:paddingLeft="17dp"
                 android:paddingTop="15dp"
                 android:paddingBottom="15dp"
-                android:text="EXAMPLE@EXAMPLE.COM"
+                android:text="@string/example_example_com"
                 android:textCursorDrawable="@drawable/cursor_color"
                 android:textSize="12sp" />
 
@@ -95,7 +95,7 @@
                 android:layout_toRightOf="@+id/icon3"
                 android:background="@android:color/transparent"
                 android:fontFamily="@font/poppins_regular"
-                android:hint="Number +XX XXXXXXX"
+                android:hint="@string/number_xx_xxxxxxx"
                 android:text="+XX XXXXXXXXXX"
                 android:maxLength="14"
                 android:maxLines="1"
@@ -129,7 +129,7 @@
             android:gravity="center"
             android:paddingTop="14dp"
             android:paddingBottom="14dp"
-            android:text="CLOSE SESSION"
+            android:text="@string/close_session"
             android:textColor="#ffffff"
             android:textSize="12sp" />
 

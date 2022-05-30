@@ -91,7 +91,7 @@
                         android:layout_toRightOf="@+id/username_icon"
                         android:background="@android:color/transparent"
                         android:fontFamily="@font/poppins_regular"
-                        android:hint="Search"
+                        android:hint="@string/search"
                         android:inputType="text"
                         android:maxLines="1"
                         android:paddingLeft="17dp"
@@ -146,7 +146,7 @@
                                 android:id="@+id/imageView13"
                                 android:layout_width="wrap_content"
                                 android:layout_height="191dp"
-                                android:contentDescription="eda"
+                                android:contentDescription="@string/eda"
                                 android:src="@drawable/hotel1"
                                 tools:ignore="ImageContrastCheck,ImageContrastCheck" />
 
@@ -166,7 +166,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="10dp"
-                                android:text="Description"
+                                android:text="@string/description1"
                                 android:textColor="#4527A0" />
                         </LinearLayout>
 
@@ -202,7 +202,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="10dp"
                                 android:fontFamily="@font/poppins_regular"
-                                android:text="Schedule Example"
+                                android:text="@string/schedule_example1"
                                 android:textSize="20sp"
                                 android:textStyle="bold"
                                 android:typeface="normal" />
@@ -212,7 +212,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="10dp"
-                                android:text="Description" />
+                                android:text="@string/description" />
                         </LinearLayout>
 
                     </RelativeLayout>

@@ -1,6 +1,7 @@
 package com.bookingshine;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -24,6 +25,11 @@ import java.util.Map;
 
 public class NuevoUserFragment extends Fragment {
 
+    private FirebaseAuth mAuth;
+    private EditText editTextPasswordU;
+    private EditText editTextEmailU;
+    private Button RegUser1;
+
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -44,73 +50,43 @@ public class NuevoUserFragment extends Fragment {
         fragment.setArguments(args);
         return fragment;
     }
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
         }
     }
-    private String user = "";
-    private String email = "";
-    private String pass = "";
-
-    FirebaseAuth mAuth;
-    DatabaseReference mDatabase;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_nuevo_user, container, false);
-
         mAuth = FirebaseAuth.getInstance();
-        mDatabase = FirebaseDatabase.getInstance().getReference();
+        View view = inflater.inflate(R.layout.fragment_nuevo_user, container, false);
+        editTextEmailU = view.findViewById(R.id.editTextEmailU);
+        editTextPasswordU = view.findViewById(R.id.editTextPasswordU);
+        RegUser1 = view.findViewById(R.id.RegUser1);
 
-        EditText editTextUsernameU = view.findViewById(R.id.editTextUsernameU);
-        EditText editTextEmailU = view.findViewById(R.id.editTextEmailU);
-        EditText editTextPasswordU = view.findViewById(R.id.editTextPasswordU);
-        Button regisUser = view.findViewById(R.id.homeuser1);
-        regisUser.setOnClickListener(new View.OnClickListener() {
+        RegUser1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                email = editTextEmailU.getText().toString();
-                pass = editTextPasswordU.getText().toString();
+                String email = editTextEmailU.getText().toString().trim();
+                String password = editTextPasswordU.getText().toString().trim();
 
-                if (!email.isEmpty() && !pass.isEmpty()){
-                    if (pass.length() >= 6){
-                        registerUser();
-
+                mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()){
+                            Toast.makeText(getActivity(),"User created sucsesfully", Toast.LENGTH_SHORT).show();
+                        }
+                        else {
+                            Log.d("Tag","Error creating user", task.getException());
+                            Toast.makeText(getActivity(),"Error creating user", Toast.LENGTH_SHORT).show();
+                        }
                     }
-                    else {
-                        Toast.makeText(getActivity(), "Password need 6 characters", Toast.LENGTH_SHORT).show();
-                    }
-                }
-                else {
-                    Toast.makeText(getActivity(), "We need to fill the fields", Toast.LENGTH_SHORT).show();
-                }
+                });
+                Navigation.findNavController(view).navigate(R.id.action_nuevoUserFragment_to_loginUserFragment);
             }
         });
         return view;
-    }
-
-    private void registerUser (){
-        mAuth.createUserWithEmailAndPassword(email, pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-            @Override
-            public void onComplete(@NonNull Task<AuthResult> task) {
-                if (task.isSuccessful()){
-
-                    Map<String, Object> map = new HashMap<>();
-                    map.put("user", user);
-                    map.put("email", email);
-                    map.put("pass", pass);
-
-                    String id = mAuth.getCurrentUser().getUid();
-                    mDatabase.child("Users").child(id).setValue(map);
-                }
-                else {
-                    Toast.makeText(getActivity(), "Is not possible to register this user", Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
     }
 }

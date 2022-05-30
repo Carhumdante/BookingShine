@@ -49,8 +49,8 @@
         android:label="fragment_nuevo_user"
         tools:layout="@layout/fragment_nuevo_user" >
         <action
-            android:id="@+id/action_nuevoUserFragment_to_home_User2"
-            app:destination="@id/home_User" />
+            android:id="@+id/action_nuevoUserFragment_to_loginUserFragment"
+            app:destination="@id/loginUserFragment" />
     </fragment>
     <fragment
         android:id="@+id/homeBusiness"

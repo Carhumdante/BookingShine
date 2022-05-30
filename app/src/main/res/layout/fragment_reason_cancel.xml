@@ -21,7 +21,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/inputTextComplaints"
+        android:id="@+id/inputComplaints"
         android:layout_width="0dp"
         android:layout_height="56dp"
         android:layout_marginTop="192dp"
@@ -40,11 +40,11 @@
         android:text="@string/subject"
         android:textColor="@color/black"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/inputTextComplaints"
+        app:layout_constraintBottom_toTopOf="@+id/inputComplaints"
         app:layout_constraintStart_toStartOf="parent" />
 
     <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/textInputEditText"
+        android:id="@+id/inputDescription"
         android:layout_width="0dp"
         android:layout_height="56dp"
         android:layout_marginTop="404dp"

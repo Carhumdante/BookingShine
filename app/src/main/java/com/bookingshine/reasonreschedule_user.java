@@ -7,6 +7,9 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -58,7 +61,24 @@ public class reasonreschedule_user extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_reasonreschedule_user, container, false);
+        View view = inflater.inflate(R.layout.fragment_reasonreschedule_user, container, false);
+
+        final EditText complaint_input = view.findViewById(R.id.InputTextComplaints);
+        final EditText description_input = view.findViewById(R.id.InputTextDescription);
+        Button btn = view.findViewById(R.id.signinbutton);
+        DAOBusinessReschedule dao = new DAOBusinessReschedule();
+        btn.setOnClickListener(v->
+        {
+            BusinessReschedule resch = new BusinessReschedule(complaint_input.getText().toString(), description_input.getText().toString());
+            dao.add(resch).addOnSuccessListener(suc ->
+            {
+                Toast.makeText(getActivity(), getString(R.string.msgToastSuccess), Toast.LENGTH_SHORT).show();
+            }).addOnFailureListener(er ->
+            {
+                Toast.makeText(getActivity(), "" + er.getMessage(), Toast.LENGTH_SHORT).show();
+            });
+        });
+
+        return view;
     }
 }

@@ -6,9 +6,11 @@ import androidx.navigation.Navigation;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+import java.util.HashMap;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -55,42 +57,44 @@ public class signinbussines extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
-
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_signinbussines, container, false);
-
+        TextView regisEmp = view.findViewById(R.id.signinbutton);
+        regisEmp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Navigation.findNavController(view).navigate(R.id.action_signinbussines2_to_homeBusiness);
+            }
+        });
         TextView recoverPass = view.findViewById(R.id.passresetbuss);
-        recoverPass.setOnClickListener(new View.OnClickListener() {
+        regisEmp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Navigation.findNavController(view).navigate(R.id.action_signinbussines2_to_ressetpassword_bussines);
             }
         });
+
         final EditText username_input = view.findViewById(R.id.username_input);
         final EditText password_input = view.findViewById(R.id.password_input);
-        TextView btn = view.findViewById(R.id.signinbutton);
-        DAOBusinessUsers dao = new DAOBusinessUsers();
+        Button btn = view.findViewById(R.id.signinbutton);
+        DAOBusinessSignIn dao = new DAOBusinessSignIn();
         btn.setOnClickListener(v->
         {
-            BusinessUsers signinB = new BusinessUsers(username_input.getText().toString(), password_input.getText().toString());
-            dao.add(signinB).addOnSuccessListener(suc ->
-            {
-                Toast.makeText(getActivity(), getString(R.string.msgToastSuccess), Toast.LENGTH_SHORT).show();
-                btn.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        Navigation.findNavController(view).navigate(R.id.action_signinbussines2_to_homeBusiness);
-                    }
+            BusinessSignIn signinB = new BusinessSignIn(username_input.getText().toString(), password_input.getText().toString());
+                dao.add(signinB).addOnSuccessListener(suc ->
+                {
+                    Toast.makeText(getActivity(), getString(R.string.msgToastSuccess), Toast.LENGTH_SHORT).show();
+                }).addOnFailureListener(er ->
+                {
+                    Toast.makeText(getActivity(), "" + er.getMessage(), Toast.LENGTH_SHORT).show();
                 });
-            }).addOnFailureListener(er ->
-            {
-                Toast.makeText(getActivity(), "" + er.getMessage(), Toast.LENGTH_SHORT).show();
             });
-        });
+
+
         return view;
     }
 }

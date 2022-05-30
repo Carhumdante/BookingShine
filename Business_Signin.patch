@@ -1,0 +1,292 @@
+Index: app/build.gradle
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/build.gradle b/app/build.gradle
+--- a/app/build.gradle	(revision 37ce16b225369b118bcee0922e799acd9ccb57bd)
++++ b/app/build.gradle	(revision b62e76316f63308d37a3ccfe659cffc8358a09ef)
+@@ -8,7 +8,7 @@
+ 
+     defaultConfig {
+         applicationId "com.bookingshine"
+-        minSdk 23
++        minSdk 28
+         targetSdk 31
+         versionCode 1
+         versionName "1.0"
+Index: app/src/main/java/com/bookingshine/BusinessSignIn.java
+===================================================================
+diff --git a/app/src/main/java/com/bookingshine/BusinessSignIn.java b/app/src/main/java/com/bookingshine/BusinessSignIn.java
+new file mode 100644
+--- /dev/null	(revision b62e76316f63308d37a3ccfe659cffc8358a09ef)
++++ b/app/src/main/java/com/bookingshine/BusinessSignIn.java	(revision b62e76316f63308d37a3ccfe659cffc8358a09ef)
+@@ -0,0 +1,34 @@
++package com.bookingshine;
++
++import com.google.firebase.database.Exclude;
++
++public class BusinessSignIn {
++
++    @Exclude
++
++    private String email;
++    private String password;
++
++    public BusinessSignIn(){}
++
++    public BusinessSignIn(String email, String password) {
++        this.email = email;
++        this.password = password;
++    }
++
++    public String getEmail() {
++        return email;
++    }
++
++    public void setEmail(String email) {
++        this.email = email;
++    }
++
++    public String getPassword() {
++        return password;
++    }
++
++    public void setPassword(String password) {
++        this.password = password;
++    }
++}
+Index: app/src/main/java/com/bookingshine/DAOBusinessSignIn.java
+===================================================================
+diff --git a/app/src/main/java/com/bookingshine/DAOBusinessSignIn.java b/app/src/main/java/com/bookingshine/DAOBusinessSignIn.java
+new file mode 100644
+--- /dev/null	(revision b62e76316f63308d37a3ccfe659cffc8358a09ef)
++++ b/app/src/main/java/com/bookingshine/DAOBusinessSignIn.java	(revision b62e76316f63308d37a3ccfe659cffc8358a09ef)
+@@ -0,0 +1,44 @@
++package com.bookingshine;
++
++import android.util.Log;
++import com.google.android.gms.tasks.Task;
++import com.google.firebase.database.DatabaseReference;
++import com.google.firebase.database.FirebaseDatabase;
++import com.google.firebase.database.Query;
++import java.util.HashMap;
++
++public class DAOBusinessSignIn {
++    private DatabaseReference databaseReference;
++    public DAOBusinessSignIn()
++    {
++        FirebaseDatabase db =FirebaseDatabase.getInstance();
++        databaseReference = db.getReference(BusinessSignIn.class.getSimpleName());
++    }
++    public Task<Void> add(BusinessSignIn signinB)
++    {
++        return databaseReference.push().setValue(signinB);
++    }
++
++    public Task<Void> update(String key, HashMap<String ,Object> hashMap)
++    {
++        return databaseReference.child(key).updateChildren(hashMap);
++    }
++    public Task<Void> remove(String key)
++    {
++        return databaseReference.child(key).removeValue();
++    }
++
++    public Query get(String key)
++    {
++        if(key == null)
++        {
++            return databaseReference.orderByKey().limitToFirst(8);
++        }
++        return databaseReference.orderByKey().startAfter(key).limitToFirst(8);
++    }
++
++    public Query get()
++    {
++        return databaseReference;
++    }
++}
+Index: app/src/main/java/com/bookingshine/signinbussines.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/bookingshine/signinbussines.java b/app/src/main/java/com/bookingshine/signinbussines.java
+--- a/app/src/main/java/com/bookingshine/signinbussines.java	(revision 37ce16b225369b118bcee0922e799acd9ccb57bd)
++++ b/app/src/main/java/com/bookingshine/signinbussines.java	(revision b62e76316f63308d37a3ccfe659cffc8358a09ef)
+@@ -1,15 +1,16 @@
+ package com.bookingshine;
+ 
+ import android.os.Bundle;
+-
+ import androidx.fragment.app.Fragment;
+ import androidx.navigation.Navigation;
+-
+ import android.view.LayoutInflater;
+ import android.view.View;
+ import android.view.ViewGroup;
+ import android.widget.Button;
++import android.widget.EditText;
+ import android.widget.TextView;
++import android.widget.Toast;
++import java.util.HashMap;
+ 
+ /**
+  * A simple {@link Fragment} subclass.
+@@ -62,7 +63,7 @@
+     public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                              Bundle savedInstanceState) {
+         View view = inflater.inflate(R.layout.fragment_signinbussines, container, false);
+-        TextView regisEmp = view.findViewById(R.id.loginbuss);
++        TextView regisEmp = view.findViewById(R.id.signinbutton);
+         regisEmp.setOnClickListener(new View.OnClickListener() {
+             @Override
+             public void onClick(View view) {
+@@ -76,6 +77,24 @@
+                 Navigation.findNavController(view).navigate(R.id.action_signinbussines2_to_ressetpassword_bussines);
+             }
+         });
++
++        final EditText username_input = view.findViewById(R.id.username_input);
++        final EditText password_input = view.findViewById(R.id.password_input);
++        Button btn = view.findViewById(R.id.signinbutton);
++        DAOBusinessSignIn dao = new DAOBusinessSignIn();
++        btn.setOnClickListener(v->
++        {
++            BusinessSignIn signinB = new BusinessSignIn(username_input.getText().toString(), password_input.getText().toString());
++                dao.add(signinB).addOnSuccessListener(suc ->
++                {
++                    Toast.makeText(getActivity(), getString(R.string.msgToastSuccess), Toast.LENGTH_SHORT).show();
++                }).addOnFailureListener(er ->
++                {
++                    Toast.makeText(getActivity(), "" + er.getMessage(), Toast.LENGTH_SHORT).show();
++                });
++            });
++
++
+         return view;
+     }
+ }
+\ No newline at end of file
+Index: app/src/main/res/layout/fragment_ressetpassword_bussines.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/fragment_ressetpassword_bussines.xml b/app/src/main/res/layout/fragment_ressetpassword_bussines.xml
+--- a/app/src/main/res/layout/fragment_ressetpassword_bussines.xml	(revision 37ce16b225369b118bcee0922e799acd9ccb57bd)
++++ b/app/src/main/res/layout/fragment_ressetpassword_bussines.xml	(revision b62e76316f63308d37a3ccfe659cffc8358a09ef)
+@@ -51,7 +51,7 @@
+ 
+             <!-- ICON -->
+             <EditText
+-                android:id="@+id/pass"
++                android:id="@+id/password_input"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:layout_marginLeft="1dp"
+Index: app/src/main/res/layout/fragment_signinbussines.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/fragment_signinbussines.xml b/app/src/main/res/layout/fragment_signinbussines.xml
+--- a/app/src/main/res/layout/fragment_signinbussines.xml	(revision 37ce16b225369b118bcee0922e799acd9ccb57bd)
++++ b/app/src/main/res/layout/fragment_signinbussines.xml	(revision b62e76316f63308d37a3ccfe659cffc8358a09ef)
+@@ -18,8 +18,8 @@
+             android:background="@drawable/blue_bg">
+ 
+             <ImageView
+-                android:layout_width="77dp"
+-                android:layout_height="77dp"
++                android:layout_width="119dp"
++                android:layout_height="111dp"
+                 android:layout_gravity="center_horizontal"
+                 android:layout_marginTop="93dp"
+                 android:src="@drawable/logo" />
+@@ -49,6 +49,7 @@
+                 android:paddingLeft="17dp"
+                 android:paddingTop="15dp"
+                 android:paddingBottom="15dp"
++                android:textColorHint="#1976D2"
+                 android:textCursorDrawable="@drawable/cursor_color"
+                 android:textSize="12sp" />
+ 
+@@ -74,19 +75,20 @@
+ 
+             <!-- INPUT -->
+             <EditText
+-                android:id="@+id/pass"
++                android:id="@+id/password_input"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:layout_toRightOf="@+id/icon3"
+                 android:background="@android:color/transparent"
+                 android:fontFamily="@font/poppins_regular"
+-                android:hint="Password"
++                android:hint="@string/Password"
+                 android:inputType="textPassword"
+                 android:maxLength="10"
+                 android:maxLines="1"
+                 android:paddingLeft="17dp"
+                 android:paddingTop="15dp"
+                 android:paddingBottom="15dp"
++                android:textColorHint="#1976D2"
+                 android:textCursorDrawable="@drawable/cursor_color"
+                 android:textSize="12sp" />
+ 
+@@ -103,7 +105,7 @@
+ 
+ 
+         <TextView
+-            android:id="@+id/loginbuss"
++            android:id="@+id/signinbutton"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:layout_gravity="center"
+@@ -115,7 +117,7 @@
+             android:gravity="center"
+             android:paddingTop="14dp"
+             android:paddingBottom="14dp"
+-            android:text="Login"
++            android:text="@string/BusinessSignIn"
+             android:textColor="#ffffff"
+             android:textSize="12sp" />
+ 
+@@ -154,7 +156,7 @@
+                 android:fontFamily="@font/poppins_regular"
+                 android:gravity="center_horizontal"
+                 android:text="or"
+-                android:textColor="#aeaeae"
++                android:textColor="#757575"
+                 android:textSize="13.3sp" />
+ 
+ 
+@@ -183,7 +185,8 @@
+                 android:layout_width="26.7dp"
+                 android:layout_height="26.7dp"
+                 android:layout_marginRight="20dp"
+-                android:src="@drawable/twitter" />
++                android:src="@drawable/twitter"
++                tools:ignore="ImageContrastCheck" />
+ 
+             <ImageView
+                 android:layout_width="26.7dp"
+Index: app/src/main/res/values/strings.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/values/strings.xml b/app/src/main/res/values/strings.xml
+--- a/app/src/main/res/values/strings.xml	(revision 37ce16b225369b118bcee0922e799acd9ccb57bd)
++++ b/app/src/main/res/values/strings.xml	(revision b62e76316f63308d37a3ccfe659cffc8358a09ef)
+@@ -20,4 +20,7 @@
+     <string name="Password">Password</string>
+     <string name="BusinessContact">BusinessContact</string>
+     <string name="SignOff">Sign Off</string>
++    <string name="Login">Login</string>
++    <string name="BusinessSignIn">Business Sign in</string>
++    <string name="msgToastSuccess">Record is inserted</string>
+ </resources>
+\ No newline at end of file

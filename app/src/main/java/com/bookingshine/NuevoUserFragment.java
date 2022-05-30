@@ -8,12 +8,19 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -88,8 +95,13 @@ public class NuevoUserFragment extends Fragment {
                 pass = editTextPasswordU.getText().toString();
 
                 if (!user.isEmpty() && !email.isEmpty() && !pass.isEmpty()){
-                    registerUser();
-                    Navigation.findNavController(view).navigate(R.id.action_nuevoUserFragment_to_home_User2);
+                    if (pass.length() >= 6){
+                        registerUser();
+                        Navigation.findNavController(view).navigate(R.id.action_nuevoUserFragment_to_home_User2);
+                    }
+                    else {
+                        Toast.makeText(getActivity(), "Password need 6 characters", Toast.LENGTH_SHORT).show();
+                    }
                 }
                 else {
                     Toast.makeText(getActivity(), "We need to fill the fields", Toast.LENGTH_SHORT).show();
@@ -97,5 +109,26 @@ public class NuevoUserFragment extends Fragment {
             }
         });
         return view;
+    }
+
+    private void registerUser (){
+        mAuth.createUserWithEmailAndPassword(email, pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+            @Override
+            public void onComplete(@NonNull Task<AuthResult> task) {
+                if (task.isSuccessful()){
+
+                    Map<String, Object> map = new HashMap<>();
+                    map.put("user", user);
+                    map.put("email", email);
+                    map.put("pass", pass);
+
+                    String id = mAuth.getCurrentUser().getUid();
+                    mDatabase.child("Users").child(id).setValue(map);
+                }
+                else {
+                    Toast.makeText(getActivity(), "Is not possible to register this user", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
     }
 }

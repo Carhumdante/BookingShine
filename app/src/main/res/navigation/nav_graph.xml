@@ -63,6 +63,9 @@
         <action
             android:id="@+id/action_homeBusiness_to_profile_Bussines"
             app:destination="@id/profile_Bussines" />
+        <action
+            android:id="@+id/action_homeBusiness_to_reasonreschedule_user"
+            app:destination="@id/reasonreschedule_user" />
     </fragment>
     <fragment
         android:id="@+id/home_User"

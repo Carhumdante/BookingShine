@@ -23,4 +23,6 @@
     <string name="Login">Login</string>
     <string name="BusinessSignIn">Business Sign in</string>
     <string name="msgToastSuccess">Record is inserted</string>
+    <string name="BusinessProfile">Business Profile</string>
+    <string name="Reschedule">Reschedule</string>
 </resources>

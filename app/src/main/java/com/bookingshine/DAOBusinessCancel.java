@@ -1,22 +1,23 @@
 package com.bookingshine;
 
-import android.util.Log;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
+
 import java.util.HashMap;
 
-public class DAOBusinessSignIn {
+public class DAOBusinessCancel {
+
     private DatabaseReference databaseReference;
-    public DAOBusinessSignIn()
+    public DAOBusinessCancel()
     {
         FirebaseDatabase db =FirebaseDatabase.getInstance();
-        databaseReference = db.getReference(BusinessSignIn.class.getSimpleName());
+        databaseReference = db.getReference(BusinessUsers.class.getSimpleName());
     }
-    public Task<Void> add(BusinessSignIn signinB)
+    public Task<Void> add(BusinessCancel cancel)
     {
-        return databaseReference.push().setValue(signinB);
+        return databaseReference.push().setValue(cancel);
     }
 
     public Task<Void> update(String key, HashMap<String ,Object> hashMap)
@@ -41,4 +42,5 @@ public class DAOBusinessSignIn {
     {
         return databaseReference;
     }
+
 }

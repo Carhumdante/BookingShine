@@ -10,7 +10,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
-import java.util.HashMap;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -63,6 +62,7 @@ public class signinbussines extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_signinbussines, container, false);
+
         TextView regisEmp = view.findViewById(R.id.signinbutton);
         regisEmp.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -81,10 +81,10 @@ public class signinbussines extends Fragment {
         final EditText username_input = view.findViewById(R.id.username_input);
         final EditText password_input = view.findViewById(R.id.password_input);
         Button btn = view.findViewById(R.id.signinbutton);
-        DAOBusinessSignIn dao = new DAOBusinessSignIn();
+        DAOBusinessUsers dao = new DAOBusinessUsers();
         btn.setOnClickListener(v->
         {
-            BusinessSignIn signinB = new BusinessSignIn(username_input.getText().toString(), password_input.getText().toString());
+            BusinessUsers signinB = new BusinessUsers(username_input.getText().toString(), password_input.getText().toString());
                 dao.add(signinB).addOnSuccessListener(suc ->
                 {
                     Toast.makeText(getActivity(), getString(R.string.msgToastSuccess), Toast.LENGTH_SHORT).show();

@@ -1,8 +1,12 @@
 package com.bookingshine;
 
 import android.os.Bundle;
+
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
+
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,12 +15,22 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link signinbussines#newInstance} factory method to
  * create an instance of this fragment.
  */
 public class signinbussines extends Fragment {
+
+    private FirebaseAuth mAuth;
+    private EditText editTextPasswordU;
+    private EditText editTextEmailU;
+    private Button RegUser1;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -58,6 +72,8 @@ public class signinbussines extends Fragment {
         }
     }
 
+
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -78,21 +94,32 @@ public class signinbussines extends Fragment {
             }
         });
 
-        final EditText username_input = view.findViewById(R.id.username_input);
-        final EditText password_input = view.findViewById(R.id.password_input);
-        Button btn = view.findViewById(R.id.signinbutton);
-        DAOBusinessUsers dao = new DAOBusinessUsers();
-        btn.setOnClickListener(v->
-        {
-            BusinessUsers signinB = new BusinessUsers(username_input.getText().toString(), password_input.getText().toString());
-                dao.add(signinB).addOnSuccessListener(suc ->
-                {
-                    Toast.makeText(getActivity(), getString(R.string.msgToastSuccess), Toast.LENGTH_SHORT).show();
-                }).addOnFailureListener(er ->
-                {
-                    Toast.makeText(getActivity(), "" + er.getMessage(), Toast.LENGTH_SHORT).show();
+        mAuth = FirebaseAuth.getInstance();
+        editTextEmailU = view.findViewById(R.id.editTextEmailU);
+        editTextPasswordU = view.findViewById(R.id.editTextPasswordU);
+        RegUser1 = view.findViewById(R.id.RegUser1);
+
+        RegUser1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String email = editTextEmailU.getText().toString().trim();
+                String password = editTextPasswordU.getText().toString().trim();
+
+                mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()){
+                            Toast.makeText(getActivity(),"User created sucsesfully", Toast.LENGTH_SHORT).show();
+                        }
+                        else {
+                            Log.d("Tag","Error creating user", task.getException());
+                            Toast.makeText(getActivity(),"Error creating user", Toast.LENGTH_SHORT).show();
+                        }
+                    }
                 });
-            });
+                Navigation.findNavController(view).navigate(R.id.action_nuevoUserFragment_to_loginUserFragment);
+            }
+        });
 
 
         return view;

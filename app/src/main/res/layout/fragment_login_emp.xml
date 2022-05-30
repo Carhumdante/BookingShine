@@ -40,7 +40,7 @@
             app:layout_constraintTop_toBottomOf="@+id/imageView7" />
 
         <EditText
-            android:id="@+id/editTextTextPersonName2"
+            android:id="@+id/usernameInput"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="138dp"
@@ -50,7 +50,7 @@
             android:ems="10"
             android:hint="Email"
             android:inputType="textPersonName"
-            app:layout_constraintBottom_toTopOf="@+id/editTextTextPassword2"
+            app:layout_constraintBottom_toTopOf="@+id/passwordInput"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView"
@@ -58,7 +58,7 @@
             android:backgroundTint="@color/design_default_color_primary"/>
 
         <EditText
-            android:id="@+id/editTextTextPassword2"
+            android:id="@+id/passwordInput"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="138dp"
@@ -71,7 +71,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName2"
+            app:layout_constraintTop_toBottomOf="@+id/usernameInput"
             tools:ignore="TouchTargetSizeCheck" />
 
         <Button
@@ -85,7 +85,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.418"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword2"
+            app:layout_constraintTop_toBottomOf="@+id/passwordInput"
             android:background="@drawable/button_rounded"/>
 
         <Button

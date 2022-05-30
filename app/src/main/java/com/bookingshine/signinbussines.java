@@ -95,9 +95,9 @@ public class signinbussines extends Fragment {
         });
 
         mAuth = FirebaseAuth.getInstance();
-        editTextEmailU = view.findViewById(R.id.editTextEmailU);
-        editTextPasswordU = view.findViewById(R.id.editTextPasswordU);
-        RegUser1 = view.findViewById(R.id.RegUser1);
+        editTextEmailU = view.findViewById(R.id.username_input);
+        editTextPasswordU = view.findViewById(R.id.password_input);
+        RegUser1 = view.findViewById(R.id.signinbutton);
 
         RegUser1.setOnClickListener(new View.OnClickListener() {
             @Override

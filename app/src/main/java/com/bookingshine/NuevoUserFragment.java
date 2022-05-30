@@ -17,17 +17,12 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-
-import java.util.HashMap;
-import java.util.Map;
 
 public class NuevoUserFragment extends Fragment {
 
     private FirebaseAuth mAuth;
-    private EditText editTextPasswordU;
-    private EditText editTextEmailU;
+    private EditText username_input;
+    private EditText password_input;
     private Button RegUser1;
 
     // TODO: Rename parameter arguments, choose names that match
@@ -62,15 +57,15 @@ public class NuevoUserFragment extends Fragment {
                              Bundle savedInstanceState) {
         mAuth = FirebaseAuth.getInstance();
         View view = inflater.inflate(R.layout.fragment_nuevo_user, container, false);
-        editTextEmailU = view.findViewById(R.id.editTextEmailU);
-        editTextPasswordU = view.findViewById(R.id.editTextPasswordU);
+        username_input = view.findViewById(R.id.editTextEmailU);
+        password_input = view.findViewById(R.id.editTextPasswordU);
         RegUser1 = view.findViewById(R.id.RegUser1);
 
         RegUser1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String email = editTextEmailU.getText().toString().trim();
-                String password = editTextPasswordU.getText().toString().trim();
+                String email = username_input.getText().toString().trim();
+                String password = password_input.getText().toString().trim();
 
                 mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override

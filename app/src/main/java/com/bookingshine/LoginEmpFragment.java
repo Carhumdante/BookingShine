@@ -2,14 +2,23 @@ package com.bookingshine;
 
 import android.media.Image;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -17,6 +26,11 @@ import androidx.navigation.Navigation;
  * create an instance of this fragment.
  */
 public class LoginEmpFragment extends Fragment {
+
+    private FirebaseAuth mAuth;
+    private EditText editTextEmailU;
+    private EditText getEditTextPasswordU;
+    private Button loginuser1;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -76,6 +90,32 @@ public class LoginEmpFragment extends Fragment {
                 Navigation.findNavController(view).navigate(R.id.action_loginEmpFragment_to_signinbussines2);
             }
         });
+
+        mAuth = FirebaseAuth.getInstance();
+        editTextEmailU = view.findViewById(R.id.usernameInput);
+        getEditTextPasswordU = view.findViewById(R.id.passwordInput);
+        loginuser1 = view.findViewById(R.id.BLoginEmp);
+        loginuser1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String email = editTextEmailU.getText().toString().trim();
+                String password = getEditTextPasswordU.getText().toString().trim();
+
+                mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(getActivity(), new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()){
+                            Navigation.findNavController(view).navigate(R.id.action_loginUserFragment_to_home_User);
+                        }
+                        else {
+                            Log.d("Tag","Email or password incorrect", task.getException());
+                            Toast.makeText(getActivity(),"Email or password incorrect.", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
+            }
+        });
+
         return view;
     }
 }

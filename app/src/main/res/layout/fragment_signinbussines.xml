@@ -18,8 +18,8 @@
             android:background="@drawable/blue_bg">
 
             <ImageView
-                android:layout_width="119dp"
-                android:layout_height="111dp"
+                android:layout_width="77dp"
+                android:layout_height="77dp"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="93dp"
                 android:src="@drawable/logo" />
@@ -49,7 +49,6 @@
                 android:paddingLeft="17dp"
                 android:paddingTop="15dp"
                 android:paddingBottom="15dp"
-                android:textColorHint="#1976D2"
                 android:textCursorDrawable="@drawable/cursor_color"
                 android:textSize="12sp" />
 
@@ -75,20 +74,19 @@
 
             <!-- INPUT -->
             <EditText
-                android:id="@+id/password_input"
+                android:id="@+id/pass"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_toRightOf="@+id/icon3"
                 android:background="@android:color/transparent"
                 android:fontFamily="@font/poppins_regular"
-                android:hint="@string/Password"
+                android:hint="Password"
                 android:inputType="textPassword"
                 android:maxLength="10"
                 android:maxLines="1"
                 android:paddingLeft="17dp"
                 android:paddingTop="15dp"
                 android:paddingBottom="15dp"
-                android:textColorHint="#1976D2"
                 android:textCursorDrawable="@drawable/cursor_color"
                 android:textSize="12sp" />
 
@@ -105,7 +103,7 @@
 
 
         <TextView
-            android:id="@+id/signinbutton"
+            android:id="@+id/loginbuss"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -117,7 +115,7 @@
             android:gravity="center"
             android:paddingTop="14dp"
             android:paddingBottom="14dp"
-            android:text="@string/BusinessSignIn"
+            android:text="Login"
             android:textColor="#ffffff"
             android:textSize="12sp" />
 
@@ -156,7 +154,7 @@
                 android:fontFamily="@font/poppins_regular"
                 android:gravity="center_horizontal"
                 android:text="or"
-                android:textColor="#757575"
+                android:textColor="#aeaeae"
                 android:textSize="13.3sp" />
 
 
@@ -185,8 +183,7 @@
                 android:layout_width="26.7dp"
                 android:layout_height="26.7dp"
                 android:layout_marginRight="20dp"
-                android:src="@drawable/twitter"
-                tools:ignore="ImageContrastCheck" />
+                android:src="@drawable/twitter" />
 
             <ImageView
                 android:layout_width="26.7dp"

@@ -5,9 +5,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
+
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -55,16 +61,39 @@ public class NuevoUserFragment extends Fragment {
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
     }
+    private String user = "";
+    private String email = "";
+    private String pass = "";
+
+    FirebaseAuth mAuth;
+    DatabaseReference mDatabase;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_nuevo_user, container, false);
+
+        mAuth = FirebaseAuth.getInstance();
+        mDatabase = FirebaseDatabase.getInstance().getReference();
+
+        EditText editTextUsernameU = view.findViewById(R.id.editTextUsernameU);
+        EditText editTextEmailU = view.findViewById(R.id.editTextEmailU);
+        EditText editTextPasswordU = view.findViewById(R.id.editTextPasswordU);
         Button regisUser = view.findViewById(R.id.homeuser1);
         regisUser.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Navigation.findNavController(view).navigate(R.id.action_nuevoUserFragment_to_home_User2);
+                user = editTextUsernameU.getText().toString();
+                email = editTextEmailU.getText().toString();
+                pass = editTextPasswordU.getText().toString();
+
+                if (!user.isEmpty() && !email.isEmpty() && !pass.isEmpty()){
+                    registerUser();
+                    Navigation.findNavController(view).navigate(R.id.action_nuevoUserFragment_to_home_User2);
+                }
+                else {
+                    Toast.makeText(getActivity(), "We need to fill the fields", Toast.LENGTH_SHORT).show();
+                }
             }
         });
         return view;

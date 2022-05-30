@@ -31,7 +31,7 @@
             android:layout_marginStart="179dp"
             android:layout_marginTop="4dp"
             android:layout_marginEnd="178dp"
-            android:text="@string/BusinessLogin"
+            android:text="Login Empresas"
             android:textColor="#F9FBFB"
             android:textSize="20sp"
             android:textStyle="bold"
@@ -41,35 +41,33 @@
 
         <EditText
             android:id="@+id/editTextTextPersonName2"
-            android:layout_width="0dp"
-            android:layout_height="52dp"
-            android:layout_marginStart="32dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="138dp"
             android:layout_marginTop="50dp"
-            android:layout_marginEnd="32dp"
+            android:layout_marginEnd="132dp"
             android:layout_marginBottom="5dp"
-            android:backgroundTint="@color/design_default_color_primary"
             android:ems="10"
             android:hint="Email"
             android:inputType="textPersonName"
-            android:textColorHint="#8C9EFF"
             app:layout_constraintBottom_toTopOf="@+id/editTextTextPassword2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView"
-            tools:ignore="TouchTargetSizeCheck" />
+            tools:ignore="TouchTargetSizeCheck"
+            android:backgroundTint="@color/design_default_color_primary"/>
 
         <EditText
             android:id="@+id/editTextTextPassword2"
-            android:layout_width="0dp"
-            android:layout_height="52dp"
-            android:layout_marginStart="32dp"
-            android:layout_marginTop="36dp"
-            android:layout_marginEnd="32dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="138dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="132dp"
             android:backgroundTint="@color/design_default_color_primary"
             android:ems="10"
-            android:hint="@string/Password"
+            android:hint="Password"
             android:inputType="textPassword"
-            android:textColorHint="#8C9EFF"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
@@ -83,12 +81,12 @@
             android:layout_marginStart="187dp"
             android:layout_marginTop="28dp"
             android:layout_marginEnd="199dp"
-            android:background="@drawable/button_rounded"
             android:text="Login"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.418"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword2" />
+            app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword2"
+            android:background="@drawable/button_rounded"/>
 
         <Button
             android:id="@+id/BRegisterEmp"
@@ -97,12 +95,12 @@
             android:layout_marginStart="187dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="199dp"
-            android:background="@drawable/button_rounded_border"
             android:text="Register"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.418"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/BLoginEmp" />
+            app:layout_constraintTop_toBottomOf="@+id/BLoginEmp"
+            android:background="@drawable/button_rounded_border"/>
 
         <ImageButton
             android:id="@+id/imageButton3"
@@ -111,13 +109,13 @@
             android:layout_marginStart="121dp"
             android:layout_marginTop="41dp"
             android:layout_marginEnd="12dp"
-            android:background="@drawable/button_social"
             android:scaleType="fitCenter"
             android:src="@drawable/f"
             app:layout_constraintEnd_toStartOf="@+id/imageButton4"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/BRegisterEmp"
-            tools:ignore="SpeakableTextPresentCheck" />
+            tools:ignore="SpeakableTextPresentCheck"
+            android:background="@drawable/button_social"/>
 
         <ImageButton
             android:id="@+id/imageButton4"
@@ -125,12 +123,12 @@
             android:layout_height="72dp"
             android:layout_marginTop="44dp"
             android:layout_marginEnd="112dp"
-            android:background="@drawable/button_social"
             android:scaleType="fitCenter"
             android:src="@drawable/_00221"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/BRegisterEmp"
-            tools:ignore="SpeakableTextPresentCheck" /><![CDATA[
+            tools:ignore="SpeakableTextPresentCheck"
+            android:background="@drawable/button_social"/><![CDATA[
 
         />
 

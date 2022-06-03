@@ -76,21 +76,13 @@ public class LoginEmpFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_login_emp, container, false);
-        Button login = view.findViewById(R.id.BLoginEmp);
-        login.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Navigation.findNavController(view).navigate(R.id.action_loginEmpFragment_to_homeBusiness);
-            }
-        });
-        Button register = view.findViewById(R.id.BRegisterEmp);
-        register.setOnClickListener(new View.OnClickListener() {
+        Button RegUserEMP1 = view.findViewById(R.id.BRegisterEmp);
+        RegUserEMP1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Navigation.findNavController(view).navigate(R.id.action_loginEmpFragment_to_signinbussines2);
             }
         });
-
         mAuth = FirebaseAuth.getInstance();
         editTextEmailU = view.findViewById(R.id.usernameInput);
         getEditTextPasswordU = view.findViewById(R.id.passwordInput);
@@ -105,7 +97,7 @@ public class LoginEmpFragment extends Fragment {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()){
-                            Navigation.findNavController(view).navigate(R.id.action_loginUserFragment_to_home_User);
+                            Navigation.findNavController(view).navigate(R.id.action_loginEmpFragment_to_homeBusiness);
                         }
                         else {
                             Log.d("Tag","Email or password incorrect", task.getException());

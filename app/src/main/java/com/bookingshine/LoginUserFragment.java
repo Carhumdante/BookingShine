@@ -22,38 +22,11 @@ public class LoginUserFragment extends Fragment {
     private FirebaseAuth mAuth;
     private EditText editTextEmailU;
     private EditText getEditTextPasswordU;
-    private Button loginuser1;
-
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
-    public LoginUserFragment() {
-        // Required empty public constructor
-    }
-
-    // TODO: Rename and change types and number of parameters
-    public static LoginUserFragment newInstance(String param1, String param2) {
-        LoginUserFragment fragment = new LoginUserFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
+    private Button LogUser1;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
     }
 
     @Override
@@ -63,10 +36,10 @@ public class LoginUserFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_login_user, container, false);
 
         mAuth = FirebaseAuth.getInstance();
-        editTextEmailU = view.findViewById(R.id.editTextEmailU);
-        getEditTextPasswordU = view.findViewById(R.id.editTextPasswordU);
-        loginuser1 = view.findViewById(R.id.loginuser1);
-        loginuser1.setOnClickListener(new View.OnClickListener() {
+        editTextEmailU = view.findViewById(R.id.editTextEmailUL);
+        getEditTextPasswordU = view.findViewById(R.id.editTextPasswordUL);
+        LogUser1 = view.findViewById(R.id.LogUser1);
+        LogUser1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 String email = editTextEmailU.getText().toString().trim();
@@ -86,8 +59,8 @@ public class LoginUserFragment extends Fragment {
                 });
             }
         });
-        Button regisUser = view.findViewById(R.id.RegUser1);
-        regisUser.setOnClickListener(new View.OnClickListener() {
+        Button RegUser1 = view.findViewById(R.id.RegUser1);
+        RegUser1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Navigation.findNavController(view).navigate(R.id.action_loginUserFragment_to_nuevoUserFragment);

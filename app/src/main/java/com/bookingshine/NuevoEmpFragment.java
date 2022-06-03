@@ -7,7 +7,6 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import androidx.fragment.app.Fragment;
-import androidx.navigation.Navigation;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -62,7 +61,7 @@ public class NuevoEmpFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_nuevo_emp, container, false);
 
-        Button button = view.findViewById(R.id.homeuser1);
+        Button button = view.findViewById(R.id.RegisterUser1);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

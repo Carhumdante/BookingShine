@@ -21,35 +21,14 @@ import com.google.firebase.auth.FirebaseAuth;
 public class NuevoUserFragment extends Fragment {
 
     private FirebaseAuth mAuth;
-    private EditText username_input;
-    private EditText password_input;
+    private EditText editTextEmailU ;
+    private EditText editTextPasswordU;
     private Button RegUser1;
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
 
-    // TODO: Rename and change types of parameters
-
-    public NuevoUserFragment() {
-        // Required empty public constructor
-    }
-
-    // TODO: Rename and change types and number of parameters
-    public static NuevoUserFragment newInstance(String param1, String param2) {
-        NuevoUserFragment fragment = new NuevoUserFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-        }
     }
 
     @Override
@@ -57,29 +36,30 @@ public class NuevoUserFragment extends Fragment {
                              Bundle savedInstanceState) {
         mAuth = FirebaseAuth.getInstance();
         View view = inflater.inflate(R.layout.fragment_nuevo_user, container, false);
-        username_input = view.findViewById(R.id.editTextEmailU);
-        password_input = view.findViewById(R.id.editTextPasswordU);
-        RegUser1 = view.findViewById(R.id.RegUser1);
+        editTextEmailU = view.findViewById(R.id.editTextEmailU);
+        editTextPasswordU = view.findViewById(R.id.editTextPasswordU);
+        RegUser1 = view.findViewById(R.id.RegisterUser1);
 
         RegUser1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String email = username_input.getText().toString().trim();
-                String password = password_input.getText().toString().trim();
+                String email = editTextEmailU.getText().toString().trim();
+                String pass = editTextPasswordU.getText().toString().trim();
 
-                mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                mAuth.createUserWithEmailAndPassword(email, pass).addOnCompleteListener(getActivity(), new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()){
-                            Toast.makeText(getActivity(),"User created sucsesfully", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getActivity(),"Register Successfull!", Toast.LENGTH_SHORT).show();
+                            Navigation.findNavController(view).navigate(R.id.action_nuevoUserFragment_to_loginUserFragment);
                         }
                         else {
-                            Log.d("Tag","Error creating user", task.getException());
-                            Toast.makeText(getActivity(),"Error creating user", Toast.LENGTH_SHORT).show();
+                            Log.d("Tag","Register failed!",task.getException());
+                            Toast.makeText(getActivity(),"Register failed!", Toast.LENGTH_SHORT).show();
+
                         }
                     }
                 });
-                Navigation.findNavController(view).navigate(R.id.action_nuevoUserFragment_to_loginUserFragment);
             }
         });
         return view;

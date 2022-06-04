@@ -13,7 +13,7 @@ public class DAOBusinessCancel {
     public DAOBusinessCancel()
     {
         FirebaseDatabase db =FirebaseDatabase.getInstance();
-        databaseReference = db.getReference(BusinessUsers.class.getSimpleName());
+        databaseReference = db.getReference(BusinessCancel.class.getSimpleName());
     }
     public Task<Void> add(BusinessCancel cancel)
     {

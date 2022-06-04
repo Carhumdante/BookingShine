@@ -148,6 +148,9 @@
         <action
             android:id="@+id/action_reasonreschedule_user_to_home_User"
             app:destination="@id/home_User" />
+        <action
+            android:id="@+id/action_reasonreschedule_user_to_homeBusiness"
+            app:destination="@id/homeBusiness" />
     </fragment>
     <fragment
         android:id="@+id/reasonCancel"

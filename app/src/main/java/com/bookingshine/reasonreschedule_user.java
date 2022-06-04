@@ -3,6 +3,7 @@ package com.bookingshine;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -63,9 +64,12 @@ public class reasonreschedule_user extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_reasonreschedule_user, container, false);
 
+        Button home = view.findViewById(R.id.btnSendReschedule);
+
+
         final EditText complaint_input = view.findViewById(R.id.InputTextComplaints);
         final EditText description_input = view.findViewById(R.id.InputTextDescription);
-        Button btn = view.findViewById(R.id.signinbutton);
+        Button btn = view.findViewById(R.id.btnSendReschedule);
         DAOBusinessReschedule dao = new DAOBusinessReschedule();
         btn.setOnClickListener(v->
         {
@@ -73,6 +77,12 @@ public class reasonreschedule_user extends Fragment {
             dao.add(resch).addOnSuccessListener(suc ->
             {
                 Toast.makeText(getActivity(), getString(R.string.msgToastSuccess), Toast.LENGTH_SHORT).show();
+                home.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Navigation.findNavController(view).navigate(R.id.action_reasonreschedule_user_to_homeBusiness);
+                    }
+                });
             }).addOnFailureListener(er ->
             {
                 Toast.makeText(getActivity(), "" + er.getMessage(), Toast.LENGTH_SHORT).show();

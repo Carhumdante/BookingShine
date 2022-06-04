@@ -13,7 +13,7 @@ public class DAOBusinessReschedule {
     public DAOBusinessReschedule()
     {
         FirebaseDatabase db =FirebaseDatabase.getInstance();
-        databaseReference = db.getReference(BusinessUsers.class.getSimpleName());
+        databaseReference = db.getReference(BusinessReschedule.class.getSimpleName());
     }
     public Task<Void> add(BusinessReschedule resch)
     {

@@ -3,12 +3,14 @@ package com.bookingshine;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 /**
@@ -61,11 +63,12 @@ public class ReasonCancel extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_reasonreschedule_user, container, false);
+        View view = inflater.inflate(R.layout.fragment_reason_cancel, container, false);
+        Button home = view.findViewById(R.id.btnSendCancel);
 
         final EditText complaint_input = view.findViewById(R.id.inputComplaints);
         final EditText description_input = view.findViewById(R.id.inputDescription);
-        Button btn = view.findViewById(R.id.signinbutton);
+        Button btn = view.findViewById(R.id.btnSendCancel);
         DAOBusinessCancel dao = new DAOBusinessCancel();
         btn.setOnClickListener(v->
         {
@@ -73,6 +76,12 @@ public class ReasonCancel extends Fragment {
             dao.add(cancel).addOnSuccessListener(suc ->
             {
                 Toast.makeText(getActivity(), getString(R.string.msgToastSuccess), Toast.LENGTH_SHORT).show();
+                home.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Navigation.findNavController(view).navigate(R.id.action_reasonCancel_to_homeBusiness);
+                    }
+                });
             }).addOnFailureListener(er ->
             {
                 Toast.makeText(getActivity(), "" + er.getMessage(), Toast.LENGTH_SHORT).show();

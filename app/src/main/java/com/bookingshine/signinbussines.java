@@ -87,7 +87,7 @@ public class signinbussines extends Fragment {
             }
         });
         TextView recoverPass = view.findViewById(R.id.passresetbuss);
-        regisEmp.setOnClickListener(new View.OnClickListener() {
+        recoverPass.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Navigation.findNavController(view).navigate(R.id.action_signinbussines2_to_ressetpassword_bussines);

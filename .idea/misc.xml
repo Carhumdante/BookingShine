@@ -44,10 +44,12 @@
         <entry key="..\:/Des apli/BookingShine/app/src/main/res/layout/fragment_select_time_user.xml" value="0.1802536231884058" />
         <entry key="..\:/Des apli/BookingShine/app/src/main/res/layout/fragment_signinbussines.xml" value="0.1802536231884058" />
         <entry key="..\:/Users/alanr/AndroidStudioProjects/BookingShine/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/alanr/AndroidStudioProjects/BookingShine/app/src/main/res/layout/fragment_c_r_u_d_booking_user.xml" value="0.25" />
         <entry key="..\:/Users/alanr/AndroidStudioProjects/BookingShine/app/src/main/res/layout/fragment_complaintsandsugestions.xml" value="0.25" />
         <entry key="..\:/Users/alanr/AndroidStudioProjects/BookingShine/app/src/main/res/layout/fragment_first.xml" value="0.25" />
         <entry key="..\:/Users/alanr/AndroidStudioProjects/BookingShine/app/src/main/res/layout/fragment_home__user.xml" value="0.264" />
         <entry key="..\:/Users/alanr/AndroidStudioProjects/BookingShine/app/src/main/res/layout/fragment_home_business.xml" value="0.25" />
+        <entry key="..\:/Users/alanr/AndroidStudioProjects/BookingShine/app/src/main/res/layout/fragment_home_user.xml" value="0.264" />
         <entry key="..\:/Users/alanr/AndroidStudioProjects/BookingShine/app/src/main/res/layout/fragment_login_emp.xml" value="0.25" />
         <entry key="..\:/Users/alanr/AndroidStudioProjects/BookingShine/app/src/main/res/layout/fragment_login_user.xml" value="0.25" />
         <entry key="..\:/Users/alanr/AndroidStudioProjects/BookingShine/app/src/main/res/layout/fragment_nuevo_emp.xml" value="0.264" />
@@ -64,6 +66,8 @@
         <entry key="..\:/Users/alanr/AndroidStudioProjects/BookingShine/app/src/main/res/layout/fragment_select_day_user.xml" value="0.23867753623188406" />
         <entry key="..\:/Users/alanr/AndroidStudioProjects/BookingShine/app/src/main/res/layout/fragment_select_time_user.xml" value="0.23867753623188406" />
         <entry key="..\:/Users/alanr/AndroidStudioProjects/BookingShine/app/src/main/res/layout/fragment_signinbussines.xml" value="0.264" />
+        <entry key="..\:/Users/alanr/AndroidStudioProjects/BookingShine/app/src/main/res/layout/layout_item.xml" value="0.24895833333333334" />
+        <entry key="..\:/Users/alanr/AndroidStudioProjects/BookingShine/app/src/main/res/menu/options_menu.xml" value="0.25" />
       </map>
     </option>
   </component>

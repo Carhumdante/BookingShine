@@ -48,10 +48,11 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="Date"
-            android:inputType="textPersonName" />
+            android:inputType="textPersonName"
+            android:minHeight="48dp" />
 
         <Button
-            android:id="@+id/btnProfile"
+            android:id="@+id/btnScheduleU"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"

@@ -7,6 +7,7 @@
     tools:context=".NuevoUserFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/CL3"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/purple_700">
@@ -18,19 +19,20 @@
             android:layout_marginStart="110dp"
             android:layout_marginTop="40dp"
             android:layout_marginEnd="111dp"
+            android:contentDescription="TODO"
             android:src="@drawable/logo"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/txtRegUR"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="143dp"
             android:layout_marginTop="33dp"
             android:layout_marginEnd="143dp"
-            android:text="@string/register_new_user"
+            android:text="Register new user"
             android:textColor="#FFFFFF"
             android:textSize="20sp"
             android:textStyle="bold"
@@ -39,48 +41,50 @@
             app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
         <EditText
-            android:id="@+id/editTextEmailU"
+            android:id="@+id/EmailUR"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="98dp"
-            android:layout_marginTop="63dp"
+            android:layout_marginTop="60dp"
             android:layout_marginEnd="104dp"
             android:backgroundTint="@color/design_default_color_primary"
             android:ems="10"
             android:hint="E-mail"
             android:inputType="textPersonName"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView2"
+            app:layout_constraintTop_toBottomOf="@+id/txtRegUR"
             tools:ignore="TouchTargetSizeCheck" />
 
         <EditText
-            android:id="@+id/editTextPasswordU"
+            android:id="@+id/PassUR"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="98dp"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="12dp"
             android:layout_marginEnd="104dp"
             android:backgroundTint="@color/design_default_color_primary"
             android:ems="10"
-            android:hint="@string/Password"
+            android:hint="Password"
             android:inputType="textPassword"
             android:minHeight="48dp"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextEmailU" />
+            app:layout_constraintTop_toBottomOf="@+id/EmailUR" />
 
         <Button
-            android:id="@+id/RegisterUser1"
+            android:id="@+id/RegUR"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="161dp"
-            android:layout_marginTop="64dp"
+            android:layout_marginTop="60dp"
             android:layout_marginEnd="162dp"
             android:background="@drawable/button_rounded"
             android:text="Register"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextPasswordU" />
+            app:layout_constraintTop_toBottomOf="@+id/PassUR" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>

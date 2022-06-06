@@ -42,37 +42,40 @@ public class CRUDBookingUser extends DialogFragment {
         DAOUserSchedule dao = new DAOUserSchedule();
         ScheduleUser SU_edit = (ScheduleUser)getActivity().getIntent().getSerializableExtra("EDIT");
         if(SU_edit !=null){
+            btn.setText("UPDATE");
             NameUS.setText(SU_edit.getNameU());
             LNameUS.setText(SU_edit.getLNameU());
             EmailUS.setText(SU_edit.getEmailU());
             DateUS.setText(SU_edit.getDateU());
         }
+        else {
+            btn.setText("SUBMIT");
+        }
         btn.setOnClickListener(v -> {
-                ScheduleUser SU = new ScheduleUser(NameUS.getText().toString(), LNameUS.getText().toString(), EmailUS.getText().toString(), DateUS.getText().toString());
-                if(SU_edit==null) {
-                    dao.add(SU).addOnSuccessListener(suc ->
-                    {
-                            Toast.makeText(getContext(), "Scheduling Sucsessfull!", Toast.LENGTH_SHORT).show();
-                    }).addOnFailureListener(er ->
-                        {
-                            Toast.makeText(getContext(), "Scheduling Error!!!", Toast.LENGTH_SHORT).show();
-                    });
-                }
-                else{
-                    HashMap<String,Object>hashMap=new HashMap<>();
-                    hashMap.put("Name",NameUS.getText().toString());
-                    hashMap.put("Last Name",LNameUS.getText().toString());
-                    hashMap.put("Email",EmailUS.getText().toString());
-                    hashMap.put("Date",DateUS.getText().toString());
-                    dao.update(SU_edit.getKey(),hashMap).addOnSuccessListener(suc ->
-                    {
-                        Toast.makeText(getContext(), "Scheduling Sucsessfull!", Toast.LENGTH_SHORT).show();
-                        getActivity().finish();
-                    }).addOnFailureListener(er ->
-                    {
-                        Toast.makeText(getContext(), "Scheduling Error!!!", Toast.LENGTH_SHORT).show();
-                    });
-                }
+            ScheduleUser SU = new ScheduleUser(NameUS.getText().toString(), LNameUS.getText().toString(), EmailUS.getText().toString(), DateUS.getText().toString());
+            if (SU_edit == null) {
+                dao.add(SU).addOnSuccessListener(suc ->
+                {
+                    Toast.makeText(getContext(), "Scheduling Sucsessfull!", Toast.LENGTH_SHORT).show();
+                }).addOnFailureListener(er ->
+                {
+                    Toast.makeText(getContext(), "Scheduling Error!!!", Toast.LENGTH_SHORT).show();
+                });
+            } else {
+                HashMap<String, Object> hashMap = new HashMap<>();
+                hashMap.put("Name", NameUS.getText().toString());
+                hashMap.put("Last Name", LNameUS.getText().toString());
+                hashMap.put("Email", EmailUS.getText().toString());
+                hashMap.put("Date", DateUS.getText().toString());
+                dao.update(SU_edit.getKey(), hashMap).addOnSuccessListener(suc ->
+                {
+                    Toast.makeText(getContext(), "Update sucesfull!", Toast.LENGTH_SHORT).show();
+                    //getActivity().finish();
+                }).addOnFailureListener(er ->
+                {
+                    Toast.makeText(getContext(), "Update Error!!!", Toast.LENGTH_SHORT).show();
+                });
+            }
         });
         return view;
     }

@@ -42,9 +42,9 @@ public class  Home_User extends Fragment {
         swipeRefreshLayout = view.findViewById(R.id.swip);
         recyclerView = view.findViewById(R.id.rv);
         recyclerView.setHasFixedSize(true);
-        LinearLayoutManager manager = new LinearLayoutManager(getContext());
+        LinearLayoutManager manager = new LinearLayoutManager(getActivity());
         recyclerView.setLayoutManager(manager);
-        adapter = new RVUserSchedule(getContext());
+        adapter = new RVUserSchedule(getActivity());
         recyclerView.setAdapter(adapter);
         dao = new DAOUserSchedule();
         loadData();
@@ -97,7 +97,7 @@ public class  Home_User extends Fragment {
 
     private void loadData() {
         swipeRefreshLayout.setRefreshing(true);
-        dao.get(key).addValueEventListener(new ValueEventListener() {
+        dao.get(key).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 ArrayList<ScheduleUser> SUS = new ArrayList<>();

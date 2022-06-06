@@ -2,6 +2,7 @@ package com.bookingshine;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -10,6 +11,7 @@ import android.widget.PopupMenu;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 
 
@@ -30,11 +32,14 @@ public class RVUserSchedule extends RecyclerView.Adapter<RecyclerView.ViewHolder
         View view = LayoutInflater.from(context).inflate(R.layout.layout_item,parent,false);
         return new ScheduleUserVH(view);
     }
-
     @Override
-    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position){
+        ScheduleUser e = null;
+        this.onBindViewHolder(holder,position,e);
+    }
+    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position, ScheduleUser e) {
         ScheduleUserVH vh1 = (ScheduleUserVH) holder;
-        ScheduleUser SU = list.get(position);
+        ScheduleUser SU = e==null? list.get(position):e;
         vh1.txt_name.setText(SU.getNameU());
         vh1.txt_LastName.setText(SU.getLNameU());
         vh1.txt_email.setText(SU.getEmailU());
@@ -47,15 +52,16 @@ public class RVUserSchedule extends RecyclerView.Adapter<RecyclerView.ViewHolder
                 {
                         switch (item.getItemId()){
                             case R.id.menu_edit:
-                                Intent intent = new Intent(context,CRUDBookingUser.class);
+                                /*Intent intent = new Intent(context,CRUDBookingUser.class);
                                 intent.putExtra("EDIT", SU);
-                                context.startActivity(intent);
+                                context.startActivity(intent);*/
                                 break;
                             case R.id.menu_remove:
                                 DAOUserSchedule dao = new DAOUserSchedule();
                                 dao.remove(SU.getKey()).addOnSuccessListener(suc -> {
                                     Toast.makeText(context, "Sucsessfull removed!",Toast.LENGTH_SHORT).show();
                                     notifyItemRemoved(position);
+                                    list.remove(SU);
                                 }).addOnFailureListener(er->
                                 {
                                     Toast.makeText(context, "Failed remove!",Toast.LENGTH_SHORT).show();

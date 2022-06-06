@@ -8,6 +8,24 @@
     android:background="@drawable/blue_bg"
     tools:context=".HomeBusiness" >
 
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swip"
+        android:layout_width="337dp"
+        android:layout_height="422dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView4">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#FCFFFFFF" />
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
     <ImageView
         android:id="@+id/imageView4"
         android:layout_width="414dp"
@@ -19,45 +37,38 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ListView
-        android:id="@+id/listDates"
-        android:layout_width="380dp"
-        android:layout_height="368dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView4" />
-
     <Button
         android:id="@+id/btnScheduleU"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="68dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="68dp"
         android:text="Profile"
         app:layout_constraintEnd_toStartOf="@+id/btnCancel"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/listDates" />
+        app:layout_constraintTop_toBottomOf="@+id/swip" />
 
     <Button
         android:id="@+id/btnCancel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="64dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="164dp"
         android:text="Cancel"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/listDates" />
+        app:layout_constraintTop_toBottomOf="@+id/swip" />
 
     <Button
         android:id="@+id/btnReschedule"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="37dp"
-        android:layout_marginTop="64dp"
+        android:layout_marginTop="16dp"
         android:text="Reschedule"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.666"
         app:layout_constraintStart_toEndOf="@+id/btnCancel"
-        app:layout_constraintTop_toBottomOf="@+id/listDates" />
+        app:layout_constraintTop_toBottomOf="@+id/swip" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

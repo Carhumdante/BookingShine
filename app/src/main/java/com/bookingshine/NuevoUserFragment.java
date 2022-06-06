@@ -49,7 +49,7 @@ public class NuevoUserFragment extends Fragment {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()){
-                            Toast.makeText(getActivity(),"User created sucsesfully", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getActivity(),"User created successfully", Toast.LENGTH_SHORT).show();
                             Navigation.findNavController(view).navigate(R.id.action_nuevoUserFragment_to_loginUserFragment);
                         }
                         else {
